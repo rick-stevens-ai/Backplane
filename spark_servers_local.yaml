@@ -1,0 +1,25 @@
+# Local Ollama Server Configurations for testing
+# Using localhost instead of remote server
+
+servers:
+
+# gpt-oss:20b model on local machine (Ollama)
+    - server: "local-gpt-oss-20b"
+      shortname: "gpt-oss:20b"
+      openai_api_key: "ollama"
+      openai_api_base: "http://localhost:11434/v1"
+      openai_model: "gpt-oss:20b"
+
+# qwen3:32b model on local machine (Ollama)
+    - server: "local-qwen3-32b"
+      shortname: "qwen3:32b"
+      openai_api_key: "ollama"
+      openai_api_base: "http://localhost:11434/v1"
+      openai_model: "qwen3:32b"
+
+# llama3:latest model on local machine (Ollama)
+    - server: "local-llama3"
+      shortname: "llama3:latest"
+      openai_api_key: "ollama"
+      openai_api_base: "http://localhost:11434/v1"
+      openai_model: "llama3:latest"

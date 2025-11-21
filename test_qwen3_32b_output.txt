@@ -1,0 +1,113 @@
+
+================================================================================
+TESTING AGENT WITH QWEN3:32B MODEL
+================================================================================
+✓ Agent initialized successfully
+  Model: qwen3:32b
+  API Base: http://localhost:11434/v1
+
+--------------------------------------------------------------------------------
+Running agentic workflow...
+--------------------------------------------------------------------------------
+
+================================================================================
+AGENTIC WORKFLOW STARTED
+================================================================================
+User Request: I need to run a molecular dynamics simulation on a caffeine molecule (CN1C=NC2=C1C(=O)N(C(=O)N2C)C)
+        for an experiment called 'Caffeine Stability Study'. Please set temperature to 310 K.
+
+
+--- Iteration 1 ---
+Agent is calling 1 tool(s)...
+
+Tool: submit_simulation
+Arguments: {
+  "experiment_name": "Caffeine Stability Study",
+  "molecule_smiles": "CN1C=NC2=C1C(=O)N(C(=O)N2C)C",
+  "parameters": {
+    "temperature": 310
+  },
+  "simulation_type": "md"
+}
+Result: Job submitted with ID: 3db2594d-9e75-4ebe-9740-e2d9cd3ccd5d
+
+--- Iteration 2 ---
+Agent is calling 1 tool(s)...
+
+Tool: check_simulation_status
+Arguments: {
+  "job_id": "3db2594d-9e75-4ebe-9740-e2d9cd3ccd5d"
+}
+Result: Status = SUCCESS
+Simulation Results: {
+  "experiment_name": "Caffeine Stability Study",
+  "molecule_smiles": "CN1C=NC2=C1C(=O)N(C(=O)N2C)C",
+  "simulation_type": "md",
+  "parameters": {
+    "temperature": 310.0
+  },
+  "results": {
+    "energy_level_hartree": -420.5,
+    "energy_level_ev": -11442.7,
+    "convergence_achieved": true,
+    "optimization_steps": 5,
+    "final_geometry_rmsd": 0.0023,
+    "dipole_moment_debye": 2.45,
+    "total_charge": 0,
+    "spin_multiplicity": 1,
+    "vibrational_frequencies": [
+      345.2,
+      567.8,
+      892.1,
+      1024.5,
+      1456.3
+    ],
+    "homo_lumo_gap_ev": 4.82,
+    "computation_time_seconds": 10
+  },
+  "output_files": {
+    "checkpoint": "/scratch/users/ai_factory/3db2594d-9e75-4ebe-9740-e2d9cd3ccd5d.chk",
+    "log_file": "/scratch/users/ai_factory/3db2594d-9e75-4ebe-9740-e2d9cd3ccd5d.log",
+    "geometry": "/scratch/users/ai_factory/3db2594d-9e75-4ebe-9740-e2d9cd3ccd5d.xyz"
+  },
+  "status": "completed_successfully",
+  "completion_time": "2025-11-21 15:22:30"
+}
+
+--- Iteration 3 ---
+
+================================================================================
+AGENT RESPONSE:
+================================================================================
+The molecular dynamics simulation for your 'Caffeine Stability Study' has completed successfully. Here are the key results:
+
+**Simulation Parameters**  
+- Temperature: 310.0 K  
+- Molecule: Caffeine (SMILES: `CN1C=NC2=C1C(=O)N(C(=O)N2C)C`)  
+
+**Key Outcomes**  
+- Energy Level: -420.5 Hartree (-11442.7 eV)  
+- Convergence Achieved: Yes (5 optimization steps)  
+- Final Geometry RMSD: 0.0023 Å (Excellent stability)  
+- Dipole Moment: 2.45 Debye  
+- Vibrational Frequencies: [345.2, 567.8, 892.1, 1024.5, 1456.3] cm⁻¹  
+- HOMO-LUMO Gap: 4.82 eV  
+
+**Output Files**  
+- Checkpoint: `/scratch/users/ai_factory/3db2594d-9e75-4ebe-9740-e2d9cd3ccd5d.chk`  
+- Log File: `/scratch/users/ai_factory/3db2594d-9e75-4ebe-9740-e2d9cd3ccd5d.log`  
+- Final Geometry: `/scratch/users/ai_factory/3db2594d-9e75-4ebe-9740-e2d9cd3ccd5d.xyz`  
+
+The simulation completed in 10 seconds. Let me know if you need further analysis or additional simulations!
+================================================================================
+
+
+================================================================================
+✓ TEST COMPLETED SUCCESSFULLY
+================================================================================
+
+Final Job Status: SUCCESS
+Experiment: Caffeine Stability Study
+Molecule: CN1C=NC2=C1C(=O)N(C(=O)N2C)C
+Simulation Type: md
+Energy Level: -420.5 Hartree
