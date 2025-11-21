@@ -1,0 +1,27 @@
+erminal 1: The HPC Worker (Run this first) This listens for jobs.
+
+Bash
+
+celery -A tasks.celery_app worker --loglevel=info
+Terminal 2: The API Server This serves the HTTP endpoints.
+
+Bash
+
+uvicorn main:app --reload
+4. Workflow for the AI Agent
+Agent Reasoner decides a simulation is needed.
+
+Agent sends POST to http://localhost:8000/submit_job with JSON:
+
+JSON
+
+{
+  "experiment_name": "Li-Ion Battery Test",
+  "molecule_smiles": "Li[C6]",
+  "simulation_type": "dft_optimization"
+}
+API responds instantly: {"job_id": "a1b2...", "status": "QUEUED"}.
+
+Worker (Terminal 1) wakes up, simulates the 10s delay, and logs progress.
+
+Agent polls /job_status/a1b2... until it receives "status": "SUCCESS" and the calculated energy levels.

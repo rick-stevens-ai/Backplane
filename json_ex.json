@@ -1,0 +1,5 @@
+{
+  "experiment_name": "Li-Ion Battery Test",
+  "molecule_smiles": "Li[C6]",
+  "simulation_type": "dft_optimization"
+}
