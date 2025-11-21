@@ -1,0 +1,46 @@
+# CELS Server Configurations for robin_testing_v2.py
+# Last updated: 2025-04-20
+
+servers:
+
+# oss-120b model on local machine (Ollama)
+    - server: "spark-36ac"
+      shortname: "gpt-oss:120b"
+      openai_api_key: "CELS"
+      openai_api_base: "http://192.168.1.212:11434/v1"
+      openai_model: "gpt-oss:120b"
+
+# oss-20b model on local machine (Ollama)
+    - server: "spark-36ad"
+      shortname: "gpt-oss:20b"
+      openai_api_key: "CELS"
+      openai_api_base: "http://192.168.1.212:11434/v1"
+      openai_model: "gpt-oss:20b"
+
+# qwen3-coder latest model on local machine (Ollama)
+    - server: "spark-36ae"
+      shortname: "qwen3-coder:latest"
+      openai_api_key: "CELS"
+      openai_api_base: "http://192.168.1.212:11434/v1"
+      openai_model: "qwen3-coder:latest"
+
+# gpt-oss:20b model on containerized server
+    - server: "spark-container-01"
+      shortname: "gpt-oss:20b-container"
+      openai_api_key: "sk-aad91216be8b44a194672560b4dde7b4"
+      openai_api_base: "http://100.94.58.120:12000/api/v1"
+      openai_model: "gpt-oss:20b"
+
+# qwen3-coder model on containerized server
+    - server: "spark-container-02"
+      shortname: "qwen3-coder-container"
+      openai_api_key: "sk-aad91216be8b44a194672560b4dde7b4"
+      openai_api_base: "http://100.94.58.120:12000/api/v1"
+      openai_model: "qwen3-coder:latest"
+
+# gpt-oss:120b model on containerized server
+    - server: "spark-container-03"
+      shortname: "gpt-oss:120b-container"
+      openai_api_key: "sk-aad91216be8b44a194672560b4dde7b4"
+      openai_api_base: "http://100.94.58.120:12000/api/v1"
+      openai_model: "gpt-oss:120b"
