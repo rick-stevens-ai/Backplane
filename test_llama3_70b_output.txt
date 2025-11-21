@@ -1,0 +1,39 @@
+Traceback (most recent call last):
+  File "/Users/stevens/Dropbox/Backplane/test_llama3_70b.py", line 34, in main
+    result = agent.run_agentic_workflow(user_request)
+  File "/Users/stevens/Dropbox/Backplane/agent.py", line 206, in run_agentic_workflow
+    response = self.client.chat.completions.create(
+  File "/Users/stevens/opt/anaconda3/lib/python3.9/site-packages/openai/_utils/_utils.py", line 277, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/stevens/opt/anaconda3/lib/python3.9/site-packages/openai/resources/chat/completions.py", line 579, in create
+    return self._post(
+  File "/Users/stevens/opt/anaconda3/lib/python3.9/site-packages/openai/_base_client.py", line 1232, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/stevens/opt/anaconda3/lib/python3.9/site-packages/openai/_base_client.py", line 921, in request
+    return self._request(
+  File "/Users/stevens/opt/anaconda3/lib/python3.9/site-packages/openai/_base_client.py", line 1012, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'registry.ollama.ai/library/llama3:70b does not support tools', 'type': 'api_error', 'param': None, 'code': None}}
+
+================================================================================
+TESTING AGENT WITH LLAMA3:70B MODEL
+================================================================================
+✓ Agent initialized successfully
+  Model: llama3:70b
+  API Base: http://localhost:11434/v1
+
+--------------------------------------------------------------------------------
+Running agentic workflow...
+--------------------------------------------------------------------------------
+
+================================================================================
+AGENTIC WORKFLOW STARTED
+================================================================================
+User Request: Please run a molecular dynamics simulation on an aspirin molecule (CC(=O)Oc1ccccc1C(=O)O)
+        for an experiment called 'Aspirin Degradation Study'. Use temperature 300 K and study the stability.
+
+
+--- Iteration 1 ---
+
+✗ TEST FAILED
+Error: Error code: 400 - {'error': {'message': 'registry.ollama.ai/library/llama3:70b does not support tools', 'type': 'api_error', 'param': None, 'code': None}}
