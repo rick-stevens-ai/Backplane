@@ -15,6 +15,7 @@ The agentic workflow requires models that support:
 - **Parameters**: 20.9B
 - **Quantization**: MXFP4
 - **Function Calling**: Yes
+- **Server**: Local Ollama (localhost:11434)
 - **Status**: Fully compatible
 - **Test Result**: SUCCESS
 - **Notes**: Excellent performance, formal output style
@@ -23,9 +24,19 @@ The agentic workflow requires models that support:
 - **Parameters**: 32.8B
 - **Quantization**: Q4_K_M
 - **Function Calling**: Yes
+- **Server**: Local Ollama (localhost:11434)
 - **Status**: Fully compatible
 - **Test Result**: SUCCESS
 - **Notes**: Excellent performance, conversational output style
+
+### ✓ gpt-oss:120b
+- **Parameters**: 120B
+- **Quantization**: Unknown
+- **Function Calling**: Yes
+- **Server**: Remote Containerized (100.94.58.120:12000)
+- **Status**: Fully compatible
+- **Test Result**: SUCCESS
+- **Notes**: Outstanding performance, most sophisticated output with interpretation and scientific recommendations
 
 ## Incompatible Models
 
@@ -43,14 +54,6 @@ The agentic workflow requires models that support:
 - **Function Calling**: No (assumed, not tested)
 - **Status**: Likely incompatible
 - **Notes**: Same family as llama3:70b, likely lacks tool support
-
-## Models Not Available Locally
-
-### gpt-oss:120b
-- **Parameters**: 120B (estimated)
-- **Location**: Remote server (192.168.1.212:11434)
-- **Status**: Not accessible
-- **Notes**: Referenced in spark_servers.yaml but requires network access to remote Ollama instance
 
 ## Untested Models (Available Locally)
 

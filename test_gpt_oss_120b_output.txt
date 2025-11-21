@@ -1,0 +1,169 @@
+Traceback (most recent call last):
+  File "/Users/stevens/Dropbox/Backplane/test_gpt_oss_120b.py", line 36, in main
+    result = agent.run_agentic_workflow(user_request)
+  File "/Users/stevens/Dropbox/Backplane/agent.py", line 229, in run_agentic_workflow
+    job_id = self.submit_job(arguments)
+  File "/Users/stevens/Dropbox/Backplane/agent.py", line 58, in submit_job
+    response.raise_for_status()
+  File "/Users/stevens/opt/anaconda3/lib/python3.9/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 422 Client Error: Unprocessable Entity for url: http://127.0.0.1:8000/submit_job
+
+================================================================================
+TESTING AGENT WITH GPT-OSS:120B MODEL (CONTAINERIZED SERVER)
+================================================================================
+✓ Agent initialized successfully
+  Model: gpt-oss:120b
+  API Base: http://100.94.58.120:12000/api/v1
+  Server: spark-container-03
+
+--------------------------------------------------------------------------------
+Running agentic workflow...
+--------------------------------------------------------------------------------
+
+================================================================================
+AGENTIC WORKFLOW STARTED
+================================================================================
+User Request: Please run a DFT optimization simulation on an ethanol molecule (CCO)
+        for an experiment called 'Ethanol Molecular Structure Analysis'.
+        Set the temperature parameter to 298.15 K and analyze the molecular properties.
+
+
+--- Iteration 1 ---
+Agent is calling 1 tool(s)...
+
+Tool: submit_simulation
+Arguments: {
+  "experiment_name": "Ethanol Molecular Structure Analysis",
+  "molecule_smiles": "CCO",
+  "parameters": {
+    "simulation_type": "DFT optimization",
+    "temperature": 298.15
+  },
+  "simulation_type": "DFT optimization"
+}
+
+✗ TEST FAILED
+Error: 422 Client Error: Unprocessable Entity for url: http://127.0.0.1:8000/submit_job
+
+================================================================================
+TESTING AGENT WITH GPT-OSS:120B MODEL (CONTAINERIZED SERVER)
+================================================================================
+✓ Agent initialized successfully
+  Model: gpt-oss:120b
+  API Base: http://100.94.58.120:12000/api/v1
+  Server: spark-container-03
+
+--------------------------------------------------------------------------------
+Running agentic workflow...
+--------------------------------------------------------------------------------
+
+================================================================================
+AGENTIC WORKFLOW STARTED
+================================================================================
+User Request: Please run a DFT optimization simulation on an ethanol molecule (CCO)
+        for an experiment called 'Ethanol Molecular Structure Analysis'.
+        Set the temperature parameter to 298.15 K and analyze the molecular properties.
+
+
+--- Iteration 1 ---
+Agent is calling 1 tool(s)...
+
+Tool: submit_simulation
+Arguments: {
+  "experiment_name": "Ethanol Molecular Structure Analysis",
+  "molecule_smiles": "CCO",
+  "parameters": {
+    "temperature": 298.15
+  },
+  "simulation_type": "DFT optimization"
+}
+Result: Job submitted with ID: 79251ba0-b89a-4655-aaf9-f1307727ab0f
+
+--- Iteration 2 ---
+Agent is calling 1 tool(s)...
+
+Tool: check_simulation_status
+Arguments: {
+  "job_id": "79251ba0-b89a-4655-aaf9-f1307727ab0f"
+}
+Result: Status = SUCCESS
+Simulation Results: {
+  "experiment_name": "Ethanol Molecular Structure Analysis",
+  "molecule_smiles": "CCO",
+  "simulation_type": "DFT optimization",
+  "parameters": {
+    "temperature": 298.15
+  },
+  "results": {
+    "energy_level_hartree": -420.5,
+    "energy_level_ev": -11442.7,
+    "convergence_achieved": true,
+    "optimization_steps": 5,
+    "final_geometry_rmsd": 0.0023,
+    "dipole_moment_debye": 2.45,
+    "total_charge": 0,
+    "spin_multiplicity": 1,
+    "vibrational_frequencies": [
+      345.2,
+      567.8,
+      892.1,
+      1024.5,
+      1456.3
+    ],
+    "homo_lumo_gap_ev": 4.82,
+    "computation_time_seconds": 10
+  },
+  "output_files": {
+    "checkpoint": "/scratch/users/ai_factory/79251ba0-b89a-4655-aaf9-f1307727ab0f.chk",
+    "log_file": "/scratch/users/ai_factory/79251ba0-b89a-4655-aaf9-f1307727ab0f.log",
+    "geometry": "/scratch/users/ai_factory/79251ba0-b89a-4655-aaf9-f1307727ab0f.xyz"
+  },
+  "status": "completed_successfully",
+  "completion_time": "2025-11-21 15:35:18"
+}
+
+--- Iteration 3 ---
+
+================================================================================
+AGENT RESPONSE:
+================================================================================
+**DFT Optimization Results – “Ethanol Molecular Structure Analysis”**
+
+| Item | Value |
+|------|-------|
+| **Molecule (SMILES)** | `CCO` (ethanol) |
+| **Simulation Type** | DFT optimization |
+| **Temperature** | 298.15 K |
+| **Computation Time** | 10 s |
+| **Energy** | -420.5 Hartree (≈ ‑11 442.7 eV) |
+| **Convergence** | Achieved (5 optimization steps) |
+| **Final Geometry RMSD** | 0.0023 Å |
+| **Dipole Moment** | 2.45 D |
+| **Total Charge** | 0 |
+| **Spin Multiplicity** | 1 (singlet) |
+| **Vibrational Frequencies (cm⁻¹)** | 345.2, 567.8, 892.1, 1024.5, 1456.3 |
+| **HOMO‑LUMO Gap** | 4.82 eV |
+| **Output Files** | • Checkpoint: `/scratch/users/ai_factory/79251ba0-b89a-4655-aaf9-f1307727ab0f.chk`  <br>• Log: `/scratch/users/ai_factory/79251ba0-b89a-4655-aaf9-f1307727ab0f.log`  <br>• Optimized Geometry (XYZ): `/scratch/users/ai_factory/79251ba0-b89a-4655-aaf9-f1307727ab0f.xyz` |
+
+### Interpretation & Next Steps
+- **Geometry**: The low RMSD indicates the optimized structure is well‑converged. You can retrieve the XYZ file to visualize the 3‑D geometry.
+- **Dipole Moment (2.45 D)**: Consistent with ethanol’s polar nature; useful for solvent interaction studies.
+- **Vibrational Frequencies**: No imaginary frequencies were reported, confirming the structure is a true minimum on the potential energy surface.
+- **HOMO‑LUMO Gap (4.82 eV)**: Suggests moderate electronic stability; could be compared with other alcohols or functionalized derivatives.
+
+If you need further analysis—such as molecular dynamics, solvent effects, or electronic property calculations—just let me know!
+================================================================================
+
+
+================================================================================
+✓ TEST COMPLETED SUCCESSFULLY
+================================================================================
+
+Final Job Status: SUCCESS
+Experiment: Ethanol Molecular Structure Analysis
+Molecule: CCO
+Simulation Type: DFT optimization
+Energy Level: -420.5 Hartree
+HOMO-LUMO Gap: 4.82 eV
+Dipole Moment: 2.45 Debye
