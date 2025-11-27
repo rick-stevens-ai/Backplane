@@ -1,0 +1,367 @@
+# NH3 Catalyst Database - 300 Entries
+# Parsed from comprehensive catalyst compilation
+# Format: ID,Formula,Name,Category,Notes,SMILES_Representable
+
+# PART 1: First 100 Catalysts
+
+# 1. IRON-BASED CATALYSTS (Traditional Haber-Bosch)
+1,Fe3O4,Magnetite with K2O/Al2O3 promoters,Iron-based,Classic industrial Haber-Bosch catalyst,No
+2,FeO,Wüstite-based Fe catalyst,Iron-based,Reduced iron oxide with promoters,No
+3,Fe-K2O-Al2O3-CaO,Multi-promoted iron,Iron-based,Multi-promoted iron catalyst,No
+4,Fe-Co,Iron-cobalt alloy,Iron-based,Enhanced activity over pure Fe,No
+5,Fe-Ni,Iron-nickel alloy,Iron-based,Improved nitrogen activation,No
+6,Fe91Zr9,Iron-zirconium alloy,Iron-based,Amorphous iron-zirconium alloy,No
+7,Fe/BaH2,Iron on barium hydride,Iron-based,Iron on barium hydride support,No
+8,Fe/C12A7:e-,Iron on electride,Iron-based,Iron on electride support,No
+9,AlH-K+/Fe,Inverse catalyst,Iron-based,Novel inverse structure design,No
+10,Fe-Co/C-N,Bimetallic on porous carbon,Iron-based,Bimetallic on porous support,No
+
+# 2. RUTHENIUM-BASED CATALYSTS (2nd Generation)
+11,Ru/MgO,Ruthenium on magnesia,Ruthenium-based,Classic supported Ru catalyst,No
+12,Ru/Al2O3,Ruthenium on alumina,Ruthenium-based,Alumina-supported ruthenium,No
+13,Ru/C,Ruthenium on carbon,Ruthenium-based,Carbon-supported ruthenium,No
+14,Ru-Cs/MgO,Cesium-promoted Ru,Ruthenium-based,Cesium-promoted Ru catalyst,No
+15,Ru-Ba/MgO,Barium-promoted Ru,Ruthenium-based,Barium-promoted Ru catalyst,No
+16,Ru-K/AC,Potassium-promoted Ru,Ruthenium-based,Potassium-promoted Ru on carbon,No
+17,Ru/C12A7:e-,Ru on electride,Ruthenium-based,Electride-supported Ru high performance,No
+18,Ru/Ca2N:e-,Ru on 2D electride,Ruthenium-based,2D electride support,No
+19,Ru/CaH2,Ru on calcium hydride,Ruthenium-based,Calcium hydride support,No
+20,Ru/Ca2NH,Ru on calcium nitride hydride,Ruthenium-based,Calcium nitride hydride support,No
+21,Ru/BaH2,Ru on barium hydride,Ruthenium-based,Barium hydride support,No
+22,Ru/Ca(NH2)2,Ru on calcium amide,Ruthenium-based,Calcium amide matrix,No
+23,Ru-Ba/Ca(NH2)2,Ru-Ba core-shell,Ruthenium-based,Self-organized nanoparticles,No
+24,Ru/ZrO2-N,Ru on N-modified zirconia,Ruthenium-based,Nitrogen-modified zirconia support,No
+25,Ru/Y2O3,Ru on yttria,Ruthenium-based,Yttrium oxide support,No
+26,Ru/Sm2O3,Ru on samaria,Ruthenium-based,Samarium oxide support,No
+27,Ru/CaCN2,Ru on calcium cyanamide,Ruthenium-based,Calcium cyanamide support,No
+28,Ru/La2O3,Ru on lanthana,Ruthenium-based,Lanthanum oxide support,No
+29,Ru/Pr6O11,Ru on praseodymia,Ruthenium-based,Praseodymium oxide support,No
+30,Ru/BaO-CaO,Ru on mixed oxide,Ruthenium-based,Mixed oxide support,No
+
+# 3. COBALT-BASED CATALYSTS
+31,Co/C12A7:e-,Cobalt on electride,Cobalt-based,Cobalt on electride,No
+32,Co3Mo3N,Cobalt molybdenum nitride,Cobalt-based,Cobalt molybdenum nitride,No
+33,Co-Mo/Al2O3,Co-Mo bimetallic,Cobalt-based,Bimetallic on alumina,No
+34,Co/BaH2,Cobalt on barium hydride,Cobalt-based,Cobalt on barium hydride,No
+35,Co/LaN,Cobalt on lanthanum nitride,Cobalt-based,Cobalt on lanthanum nitride,No
+36,LaCoSi,Intermetallic,Cobalt-based,Ternary intermetallic compound,No
+37,Co/Fe,Cobalt-iron bimetallic,Cobalt-based,Iron-cobalt synergy,No
+38,Co-B/Ru12,Bimetallic electrocatalyst,Cobalt-based,Bimetallic electrocatalyst,No
+39,G-RuCo,Gradient Ru-Co,Cobalt-based,Gradient Ru-doped cobalt,No
+40,Co1Ru,Single-atom alloy,Cobalt-based,Cobalt atoms in Ru surface,No
+
+# 4. NICKEL-BASED CATALYSTS
+41,Ni/BaH2,Nickel on barium hydride,Nickel-based,Nickel on barium hydride CLAS,No
+42,Ni/LaN,Nickel on lanthanum nitride,Nickel-based,Nickel on lanthanum nitride,No
+43,Ni/CeN,Nickel on cerium nitride,Nickel-based,Nickel on cerium nitride,No
+44,Ni/YN,Nickel on yttrium nitride,Nickel-based,Nickel on yttrium nitride,No
+45,Ni/C12A7:e-,Nickel on electride,Nickel-based,Nickel on electride,No
+46,Ni2Mo3N,Nickel molybdenum nitride,Nickel-based,Nickel molybdenum nitride,No
+47,Ni-La(NH2)2,Nickel on lanthanum amide,Nickel-based,Nickel on imide support,No
+48,Ni1Ru,Ni single-atom alloy,Nickel-based,Ni atoms in Ru surface,No
+49,FeNi-Co/C,Trimetallic on carbon,Nickel-based,Trimetallic on carbon mat,No
+50,Ni/Ba-Ca-imide,Nickel on mixed imide,Nickel-based,Nickel on mixed imide support,No
+
+# 5. METAL NITRIDES AND CARBIDES
+51,Mo2N,Molybdenum nitride,Metal-nitride,Molybdenum nitride,No
+52,VN,Vanadium nitride,Metal-nitride,Vanadium nitride,No
+53,TiN,Titanium nitride,Metal-nitride,Titanium nitride,No
+54,CrN,Chromium nitride,Metal-nitride,Chromium nitride,No
+55,Mn4N-EuN,Manganese-europium nitride,Metal-nitride,Manganese-europium nitride composite,No
+56,LaN,Lanthanum nitride,Metal-nitride,Lanthanum nitride with vacancies,No
+57,CeN,Cerium nitride,Metal-nitride,Cerium nitride,No
+58,PrN,Praseodymium nitride,Metal-nitride,Praseodymium nitride,No
+59,Fe2N,Iron nitride,Metal-nitride,Iron nitride,No
+60,Mo2C,Molybdenum carbide,Metal-carbide,Molybdenum carbide,No
+
+# 6. METAL HYDRIDES AND OXYHYDRIDES
+61,BaH2,Barium hydride,Metal-hydride,Barium hydride chemical looping,No
+62,CaH2,Calcium hydride,Metal-hydride,Calcium hydride,No
+63,CaFH,Calcium fluoride-hydride,Metal-hydride,Ca fluoride-hydride works at 50C,No
+64,BaCrN3H,Barium chromium nitride-hydride,Metal-hydride,Barium chromium nitride-hydride,No
+65,Ca3CrN3H,Calcium chromium nitride-hydride,Metal-hydride,Calcium chromium nitride-hydride,No
+66,TiO2-xHy,Titanium oxyhydride,Oxyhydride,Titanium oxyhydride,No
+67,BaTiO2.5H0.5,Perovskite oxyhydride,Oxyhydride,Perovskite oxyhydride,No
+68,SrVO2H,Strontium vanadium oxyhydride,Oxyhydride,Strontium vanadium oxyhydride,No
+69,LiH-TM,Lithium hydride composite,Metal-hydride,Lithium hydride with transition metals,No
+70,Ba3SiO5-xNyHu,Orthosilicate oxynitride-hydride,Oxyhydride,Orthosilicate oxynitride-hydride,No
+
+# 7. ELECTRIDE MATERIALS
+71,C12A7:e-,Mayenite electride,Electride,Ca24Al28O64 electride,No
+72,Ca2N:e-,Calcium nitride electride,Electride,2D layered electride,No
+73,Y2C,Yttrium carbide electride,Electride,Yttrium carbide electride,No
+74,LaCoSi,Intermetallic electride,Electride,Intermetallic electride,No
+75,BaAl2O4-xHy,Aluminate hydride electride,Electride,Aluminate hydride electride,No
+76,Sr3CrN3,Strontium chromium nitride,Electride,Strontium chromium nitride electride,No
+77,La5Si3,Lanthanum silicide,Electride,Lanthanum silicide,No
+
+# 8. SINGLE-ATOM AND CLUSTER CATALYSTS
+78,Fe-N4/C,Fe single atom on N-C,Single-atom,Fe single atom on N-doped carbon,No
+79,Ru1/C3N4,Ru single atom on CN,Single-atom,Ru single atom on graphitic carbon nitride,No
+80,Mo-N-C,Mo single atom,Single-atom,Mo single atom catalyst,No
+81,Fe3/Al2O3,Iron trimer cluster,Cluster,Iron trimer cluster on theta-alumina,No
+82,Rh1/MnO2,Rhodium single atom,Single-atom,Rhodium single atom on manganese oxide,No
+83,Fe-Cu/N-C,Fe-Cu diatomic,Dual-atom,Fe-Cu dual atom on N-doped graphene,No
+84,RuCu/NGA,Ru-Cu dual atoms,Dual-atom,Ru-Cu dual atoms on N-graphene aerogel,No
+85,Co1Ru,Co-Ru tandem,Cluster,Cobalt-ruthenium tandem catalyst,No
+86,Pt1/g-C3N4,Platinum single atom,Single-atom,Platinum single atom on carbon nitride,No
+87,Au1/C3N4,Gold single atom,Single-atom,Gold single atom on carbon nitride,No
+88,HEA-SAC,High-entropy single-atom,Single-atom,Fe-Co-Cu-Zn-Cd-In multicomponent,No
+
+# 9. ELECTROCATALYSTS (for Electrochemical NRR)
+89,FexOy-MoS2,Iron oxide-MoS2,Electrocatalyst,Iron oxide/molybdenum disulfide,No
+90,Ag-nanodots,Silver quantum dots,Electrocatalyst,Silver quantum dots,No
+91,Bi-nanosheets,Bismuth 2D,Electrocatalyst,Bismuth 2D materials,No
+92,N-C,N-doped porous carbon,Electrocatalyst,Metal-free electrocatalyst,No
+93,TiO2-Ov,TiO2 with vacancies,Electrocatalyst,Defective titania,No
+94,WO3-Ov,WO3 with vacancies,Electrocatalyst,Defective tungsten oxide,No
+95,MoS2-defective,Defective MoS2,Electrocatalyst,Defective molybdenum disulfide,No
+96,Au-Pt,Gold-platinum alloy,Electrocatalyst,Gold-platinum for H2 oxidation coupling,No
+97,LiNbO3,Lithium niobate cubes,Electrocatalyst,Lithium niobate,No
+98,Cu-CeO2,Copper-doped ceria,Electrocatalyst,Copper-doped ceria,No
+
+# 10. NOVEL/EMERGING CATALYSTS
+99,SiFe3W9-POM,Polyoxotungstate,Novel,Molecular catalyst with Li+/Na+,No
+100,Nb2O5-FeO,Niobium-promoted wüstite,Novel,Niobium pentoxide promoted Fe,No
+
+# PART 2: Next 200 Catalysts (101-300)
+
+# 11. BIMETALLIC ALLOY CATALYSTS
+101,Ru-Co/MgAl2O4,Ru-Co on spinel,Bimetallic,Bimetallic on spinel support,No
+102,Ru-Fe/AC,Ru-Fe on carbon,Bimetallic,Ru-Fe alloy on activated carbon,No
+103,Ru-Ni/MgO,Ru-Ni on magnesia,Bimetallic,Ruthenium-nickel bimetallic,No
+104,Ru-Mo/Al2O3,Ru-Mo on alumina,Bimetallic,Ruthenium-molybdenum system,No
+105,Fe-Co/MgO,Fe-Co from spinel,Bimetallic,High-loaded 74wt% catalyst,No
+106,Fe-Pt/Al2O3,Fe-Pt on alumina,Bimetallic,Iron-platinum bimetallic,No
+107,Fe-Pd/Al2O3,Fe-Pd on alumina,Bimetallic,Iron-palladium alloy,No
+108,Fe-Ni/graphene,Fe-Ni on graphene,Bimetallic,Fe-Ni on graphene support,No
+109,Fe-Mo/graphene,Fe5Mo on graphene,Bimetallic,Fe5Mo bimetallic on graphene,No
+110,Ni-Co/SiO2,Ni-Co on silica,Bimetallic,Nickel-cobalt alloy,No
+
+# 12. HIGH-ENTROPY ALLOY (HEA) CATALYSTS
+111,CoMoFeNiCu,Quinary HEA,High-entropy-alloy,Quinary high-entropy alloy,No
+112,FeCoNiCuMo,Five-element HEA,High-entropy-alloy,Five-element alloy variant,No
+113,FeCoCrNiMn,Cantor alloy,High-entropy-alloy,Cantor alloy for catalysis,No
+114,RuFeCoNiCu,Noble metal HEA,High-entropy-alloy,Noble metal doped HEA,No
+115,FeCoNiMoW,Refractory HEA,High-entropy-alloy,Refractory element containing,No
+116,PtPdRhIrRu,Noble HEA,High-entropy-alloy,Noble metal HEA,No
+117,CuNiCoFeMn,Medium-entropy alloy,High-entropy-alloy,Medium-entropy variant,No
+118,FeCoNiCuZn,Earth-abundant HEA,High-entropy-alloy,Earth-abundant HEA,No
+
+# 13. PHOTOCATALYSTS FOR NITROGEN FIXATION
+119,g-C3N4,Graphitic carbon nitride,Photocatalyst,Metal-free photocatalyst,No
+120,V-g-C3N4,Vacancy g-C3N4,Photocatalyst,Vacancy-engineered g-C3N4,No
+121,TiO2-Ov,TiO2 with vacancies,Photocatalyst,Defective titania photocatalyst,No
+122,Fe-TiO2,Fe-doped TiO2,Photocatalyst,Transition metal doped TiO2,No
+123,Cu-TiO2,Cu-doped TiO2,Photocatalyst,700 nm photoactive,No
+124,TiO2@C/g-C3N4,TiO2-CN composite,Photocatalyst,Composite heterojunction,No
+125,BiVO4,Bismuth vanadate,Photocatalyst,Facet-dependent photocatalyst,No
+126,Bi2MoO6/g-C3N4,Bi-Mo-O/CN,Photocatalyst,Heterojunction photocatalyst,No
+127,BiOCl,Bismuth oxychloride,Photocatalyst,Bismuth oxychloride nanosheets,No
+128,Bi3O4Br,Bismuth oxybromide,Photocatalyst,Bismuth oxybromide nanosheets,No
+129,ZnO,Zinc oxide,Photocatalyst,Zinc oxide photocatalyst nanoparticles,No
+130,WO3,Tungsten oxide,Photocatalyst,Tungsten oxide nanosheets,No
+131,CdS,Cadmium sulfide,Photocatalyst,Cadmium sulfide quantum dots,No
+132,ZnS,Zinc sulfide,Photocatalyst,Zinc sulfide photocatalyst,No
+133,Bi2O3@CoAl-LDH,Bi2O3-LDH core-shell,Photocatalyst,Heterojunction with LDH,No
+134,Fe-EDTA/g-C3N4,Fe-EDTA on CN,Photocatalyst,Iron complex modified,No
+135,Ru/TiO2-NS,Ru on TiO2 nanosheets,Photocatalyst,Ru single atoms on TiO2,No
+136,RuO2/MXene/TiO2,RuO2-MXene-TiO2,Photocatalyst,Hybrid photocatalyst,No
+137,Ru/CNS,Ru on carbon nanosheets,Photocatalyst,Ru on coal-based carbon nanosheets,No
+138,Fe-SrTiO3,Fe-doped STO,Photocatalyst,Doped perovskite photocatalyst,No
+139,BaTiO3,Barium titanate,Photocatalyst,Barium titanate photocatalyst,No
+
+# 14. MXene-BASED CATALYSTS
+140,Ti3C2Tx,Titanium carbide MXene,MXene,Titanium carbide MXene,No
+141,Mo2CTx,Molybdenum carbide MXene,MXene,Molybdenum carbide MXene,No
+142,Co/Mo2CTx,Co on Mo-MXene,MXene,Cobalt on Mo-MXene 9500 umol/g/h,No
+143,Ni/Mo2CTx,Ni on Mo-MXene,MXene,Nickel on Mo-MXene,No
+144,Re/Mo2CTx,Re on Mo-MXene,MXene,Rhenium on Mo-MXene,No
+145,Ti3C2/TiO2,MXene-oxide,MXene,MXene-oxide heterojunction,No
+146,CuPc@Ti3C2Tx,CuPc on MXene,MXene,Copper phthalocyanine on MXene,No
+147,CuBDC@Ti3C2Tx,MOF-MXene film,MXene,MOF-MXene flexible electrode,No
+148,ZIF-67@Ti3C2,ZIF on MXene,MXene,MOF on MXene hybrid,No
+149,V2CTx,Vanadium carbide MXene,MXene,Vanadium carbide MXene,No
+150,Nb2CTx,Niobium carbide MXene,MXene,Niobium carbide MXene,No
+
+# 15. METAL-ORGANIC FRAMEWORK (MOF) CATALYSTS
+151,ZIF-8-NC,ZIF-8 derived N-C,MOF,Metal-free from MOF precursor,No
+152,MIL-101(Fe)/CNT,Fe-MOF on CNT,MOF,Iron MOF on nanotubes,No
+153,NCNT@MIL-101(Fe),N-CNT in Fe-MOF,MOF,N-doped CNT in Fe-MOF,No
+154,MIL-101(Fe)/BiVO4,Fe-MOF Z-scheme,MOF,Z-scheme MOF heterojunction,No
+155,ZIF-67(Co),Cobalt ZIF,MOF,Cobalt zeolitic imidazolate framework,No
+156,MIL-53(Al)/LiNbO3,Al-MOF on LNO,MOF,MOF membrane on perovskite,No
+157,UiO-66,Zr-MOF,MOF,Zr-based MOF derivatives,No
+158,Fe-MOF/g-C3N4,Fe-MOF on CN,MOF,MOF-carbon nitride composite,No
+159,Cu-BTC,Copper BTC MOF,MOF,Copper benzene tricarboxylate,No
+160,Pd-Zr-MOF,Pd-Zr MOF,MOF,Palladium-zirconium MOF,No
+
+# 16. TERNARY INTERMETALLIC COMPOUNDS
+161,LaRuSi,La-Ru-Si intermetallic,Intermetallic,Intermetallic electride high TOF,No
+162,CeRuSi,Ce-Ru-Si intermetallic,Intermetallic,Cerium-based intermetallic,No
+163,PrRuSi,Pr-Ru-Si intermetallic,Intermetallic,Praseodymium intermetallic,No
+164,NdRuSi,Nd-Ru-Si intermetallic,Intermetallic,Neodymium intermetallic,No
+165,LaFeSi,La-Fe-Si intermetallic,Intermetallic,Iron-containing intermetallic,No
+166,LaMnSi,La-Mn-Si intermetallic,Intermetallic,Manganese intermetallic,No
+167,Ru/LaCoSi,Ru on LaCoSi,Intermetallic,Ru loaded on LaCoSi,No
+168,Ru/LaFeSi,Ru on LaFeSi,Intermetallic,Ru loaded on LaFeSi,No
+169,Ru/LaMnSi,Ru on LaMnSi,Intermetallic,Ru loaded on LaMnSi,No
+170,CaRuSi,Ca-Ru-Si intermetallic,Intermetallic,Calcium-based intermetallic,No
+171,LaRu2Si2,La-Ru-Si 122-phase,Intermetallic,122-phase intermetallic,No
+172,YRu2,Y-Ru binary,Intermetallic,Yttrium-ruthenium binary,No
+173,LaCu0.67Si1.33,La-Cu-Si,Intermetallic,Intermetallic for CO2/N2,No
+174,YTiGe,Y-Ti-Ge,Intermetallic,Hydrogenation-modified electride,No
+
+# 17. NOBLE METAL ELECTROCATALYSTS
+175,Au,Gold nanoparticles,Noble-metal,Gold for NRR,No
+176,Pt,Platinum nanoparticles,Noble-metal,Platinum catalyst,No
+177,Pd(111),Palladium facets,Noble-metal,Palladium with specific facets,No
+178,Rh1/MnO2,Rh single atom,Noble-metal,Rhodium single atom on MnO2,No
+179,Ru/BN,Ru on boron nitride,Noble-metal,Ru single atom on boron nitride,No
+180,Au-Pt,Au-Pt alloy,Noble-metal,Bimetallic for H2 oxidation coupling,No
+181,Pd63Cu37,Pd-Cu mesoporous,Noble-metal,Pd-Cu mesoporous nanospheres,No
+182,Ag-Cu,Ag-Cu nanosheets,Noble-metal,Silver-doped copper nanosheets,No
+183,Rh-Cu,Rh-Cu nanocubes,Noble-metal,Rhodium-copper hybrid nanocubes,No
+184,Pt-Ru/C,Pt-Ru on carbon,Noble-metal,Platinum-ruthenium on carbon,No
+
+# 18. COPPER-BASED ELECTROCATALYSTS
+185,Cu-foam,Porous copper foam,Copper-based,3D porous copper,No
+186,Cu-NW,Copper nanowires,Copper-based,One-dimensional copper,No
+187,Cu-NS,Copper nanosheets,Copper-based,Two-dimensional copper,No
+188,Cu/PI,Cu-polyimide hybrid,Copper-based,Electron-deficient Cu,No
+189,Cu50Ni50,Cu-Ni alloy,Copper-based,Copper-nickel alloy,No
+190,Cu/CuAu,Cu-Au core-shell SAA,Copper-based,Single-atom alloy surface,No
+191,Cu-Pd/SnO,Cu-Pd on tin oxide,Copper-based,Trimetallic on tin oxide,No
+192,Cu-Ag-film,Cu-Ag thin film,Copper-based,Bimetallic film electrode,No
+193,CuPc/CeO2,CuPc on ceria,Copper-based,Cu phthalocyanine on ceria,No
+194,Cu-MnOx,Cu-Mn oxide,Copper-based,Copper-manganese oxide nanoporous,No
+
+# 19. BISMUTH AND MAIN GROUP ELEMENT CATALYSTS
+195,Bi+K,Bi nanocrystals + K+,Main-group,Bismuth with potassium cations,No
+196,Bi2O3,Bismuth oxide,Main-group,Bismuth oxide nanoparticles,No
+197,Bi2WO6,Bismuth tungstate,Main-group,Bismuth tungstate,No
+198,Sn,Tin nanoparticles,Main-group,Tin electrocatalyst,No
+199,Sb,Antimony based,Main-group,Antimony catalysts,No
+200,InPdene,In-Pd bimetallene,Main-group,Indium-palladium 2D material,No
+
+# 20. PEROVSKITE AND OXIDE CATALYSTS
+201,LiNbO3,Lithium niobate,Perovskite,Lithium niobate cubes,No
+202,NiTiO3,Nickel titanate,Perovskite,Perovskite for NRR,No
+203,Sr3FeCoO6.72,SFC perovskite,Perovskite,Surface-hydroxylated perovskite,No
+204,ESFC-TiO2,ESFC-TiO2 composite,Perovskite,Perovskite-TiO2 hybrid,No
+205,La0.5Ce0.5O1.75/Ru,La-Ce oxide/Ru,Oxide,Mixed rare earth oxide support,No
+206,MoO3-CeOx,Mo-Ce oxide,Oxide,Molybdenum-cerium oxide,No
+207,Co3O4/TiO2,Cobalt oxide on TiO2,Oxide,Cobalt oxide on titania,No
+208,MnO2-x,Defective MnO2,Oxide,Defective manganese oxide nanosheets,No
+209,FeOx/graphene,Iron oxide on graphene,Oxide,Iron oxide on graphene,No
+210,Ru/Pr6O11,Ru on Pr oxide,Oxide,Praseodymium oxide supported Ru,No
+
+# 21. ADDITIONAL METAL NITRIDES
+211,Fe3Mo3N,Fe-Mo nitride,Metal-nitride,Iron molybdenum nitride,No
+212,Ni2Mo3N,Ni-Mo nitride,Metal-nitride,Nickel molybdenum nitride,No
+213,Mn3N2,Eta-manganese nitride,Metal-nitride,Eta-manganese nitride,No
+214,Ta3N5,Tantalum nitride,Metal-nitride,Tantalum nitride,No
+215,Nb4N5,Niobium nitride,Metal-nitride,Niobium nitride,No
+216,W2N3,Tungsten nitride,Metal-nitride,Tungsten nitride with N vacancies,No
+217,VN@NSC,VN on N,S-carbon,Metal-nitride,VN nanodots on N,S-carbon MvK,No
+218,La3V2N6,La-V nitride,Metal-nitride,Lanthanum vanadium nitride,No
+219,Ce2MnN3,Ce-Mn nitride,Metal-nitride,Cerium manganese nitride,No
+220,AlN,Aluminum nitride,Metal-nitride,Aluminum nitride support,No
+
+# 22. ADDITIONAL HYDRIDE AND IMIDE SYSTEMS
+221,SrH2,Strontium hydride,Metal-hydride,Strontium hydride,No
+222,Sr2NH,Strontium imide,Metal-imide,Strontium imide,No
+223,Co/SrNH,Co on Sr imide,Metal-imide,Cobalt on Sr imide 1686.7 mmol/g/h,No
+224,Fe/SrNH,Fe on Sr imide,Metal-imide,Iron on strontium imide,No
+225,Ni/SrNH,Ni on Sr imide,Metal-imide,Nickel on strontium imide,No
+226,Li2NH,Lithium imide,Metal-imide,Lithium imide,No
+227,Mg(NH2)2,Magnesium amide,Metal-amide,Magnesium amide,No
+228,BaNH,Barium imide,Metal-imide,Barium imide,No
+229,Ba-Ca-imide,Mixed imide,Metal-imide,Mixed alkaline earth imide,No
+230,KH,Potassium hydride,Metal-hydride,Potassium hydride,No
+
+# 23. SINGLE-ATOM ALLOYS (SAAs)
+231,Fe1Ru,Fe in Ru SAA,Single-atom-alloy,Single Fe atom in Ru,No
+232,Co1Ru,Co in Ru SAA,Single-atom-alloy,Single Co atom in Ru surface,No
+233,Ni1Ru,Ni in Ru SAA,Single-atom-alloy,Single Ni atom in Ru,No
+234,Pt1Cu,Pt in Cu SAA,Single-atom-alloy,Pt single atom in Cu,No
+235,Pd1Cu,Pd in Cu SAA,Single-atom-alloy,Pd single atom in Cu,No
+236,Au1Cu,Au in Cu SAA,Single-atom-alloy,Au single atom in Cu,No
+237,Rh1Cu,Rh in Cu SAA,Single-atom-alloy,Rh single atom in Cu,No
+238,Ir1Cu,Ir in Cu SAA,Single-atom-alloy,Ir single atom in Cu,No
+
+# 24. DUAL-ATOM AND CLUSTER CATALYSTS
+239,RuCu-DAs,RuCu dual atoms,Dual-atom,Dual atoms RuN2-CuN3 asymmetric,No
+240,FeCu-DAs,FeCu dual atoms,Dual-atom,Iron-copper dual atoms,No
+241,CoCu-DAs,CoCu dual atoms,Dual-atom,Cobalt-copper dual atoms,No
+242,NiCu-DAs,NiCu dual atoms,Dual-atom,Nickel-copper dual atoms,No
+243,PtCu-DAs,PtCu dual atoms,Dual-atom,Platinum-copper dual atoms,No
+244,PdCu-DAs,PdCu dual atoms,Dual-atom,Palladium-copper dual atoms,No
+245,Rh1Co3,Rh-Co cluster,Cluster,Rhodium-cobalt cluster,No
+246,Fe12Mn,Fe-Mn cluster,Cluster,Iron-manganese cluster,No
+247,Fe12Ni,Fe-Ni cluster,Cluster,Iron-nickel cluster,No
+248,Fe12Ru,Fe-Ru cluster,Cluster,Iron-ruthenium cluster,No
+
+# 25. CARBON-BASED AND DEFECT-ENGINEERED CATALYSTS
+249,N-C,N-doped carbon,Carbon-based,Metal-free catalyst N-doped porous,No
+250,N,S-C,N,S-codoped carbon,Carbon-based,Dual heteroatom doped,No
+251,B-graphene,B-doped graphene,Carbon-based,Boron-doped graphene,No
+252,P-C,P-doped carbon,Carbon-based,Phosphorus-doped carbon,No
+253,Graphdiyne,Graphdiyne,Carbon-based,Carbon allotrope,No
+254,C-cloth,Defect carbon cloth,Carbon-based,Nitrogen-free defect carbon,No
+255,CNT,Carbon nanotube,Carbon-based,Pristine carbon nanotubes,No
+256,rGO,Reduced graphene oxide,Carbon-based,Reduced graphene oxide,No
+257,N-GQD,N-doped GQD,Carbon-based,N-doped graphene quantum dots,No
+
+# 26. SULFIDE AND CHALCOGENIDE CATALYSTS
+258,MoS2-def,Defective MoS2,Sulfide,Molybdenum disulfide defective,No
+259,MoS2-NP,MoS2 nanoparticles,Sulfide,MoS2 mimics nitrogenase,No
+260,WS2,Tungsten disulfide,Sulfide,Tungsten disulfide,No
+261,CoSb,Cobalt antimonide,Intermetallic,Cobalt antimonide intermetallic,No
+262,FeS2,Iron disulfide,Sulfide,Iron disulfide pyrite,No
+263,NiS2,Nickel disulfide,Sulfide,Nickel disulfide,No
+264,Cu2S,Copper sulfide,Sulfide,Copper sulfide,No
+265,PdSe,Palladium selenide,Selenide,Palladium selenide amorphous,No
+
+# 27. MOLECULAR AND HOMOGENEOUS-INSPIRED CATALYSTS
+266,Fe-porphyrin,Iron porphyrin,Molecular,Bio-inspired catalyst,Possibly
+267,Co-porphyrin,Cobalt porphyrin,Molecular,Co-porphyrin molecular,Possibly
+268,Ni-porphyrin,Nickel porphyrin,Molecular,Ni-porphyrin,Possibly
+269,FeMo-cofactor,FeMo-cofactor mimic,Molecular,Nitrogenase active site model,No
+270,Mo-N-C,Mo molecular catalyst,Molecular,Molybdenum molecular,No
+271,Cobaloxime,Cobaloxime,Molecular,Cobalt glyoxime complexes,Possibly
+272,Ru-pincer,Ru-pincer complex,Molecular,Organometallic Ru,Possibly
+273,Fe-terpyridine,Fe-terpyridine,Molecular,Iron polypyridyl complex,Possibly
+
+# 28. PLASMA-ASSISTED AND LOOPING CATALYSTS
+274,Fe-wire,Fe wire MW plasma,Plasma,Microwave discharge catalyst,No
+275,Mo-wire,Mo wire MW plasma,Plasma,Molybdenum for plasma synthesis,No
+276,Ni-BaH2-CLAS,Ni-BaH2 CLAS,Looping,Chemical looping ammonia synthesis,No
+277,Fe-BaH2-CLAS,Fe-BaH2 CLAS,Looping,Fe for chemical looping,No
+278,Mn-nitride-CLAS,Mn nitride CLAS,Looping,Manganese nitride looping carrier,No
+279,CoMo-DBD,CoMo DBD plasma,Plasma,Dielectric barrier discharge,No
+280,Ru-arc,Ru gliding arc,Plasma,Gliding arc synthesis,No
+
+# 29. RARE EARTH OXIDE AND NITRIDE SUPPORTS
+281,Ru/CeO2,Ru on ceria,Rare-earth,Ruthenium on ceria,No
+282,Ru/Nd2O3,Ru on Nd oxide,Rare-earth,Ru on neodymium oxide,No
+283,Ru/Gd2O3,Ru on Gd oxide,Rare-earth,Ru on gadolinium oxide,No
+284,Co/BaO,Co on BaO,Rare-earth,BaO shell on Co NPs encapsulated,No
+285,Fe/La2O3,Fe on La oxide,Rare-earth,Iron on lanthanum oxide,No
+286,Ni/Pr6O11,Ni on Pr oxide,Rare-earth,Nickel on praseodymium oxide,No
+287,Ru/Eu2O3,Ru on Eu oxide,Rare-earth,Ru on europium oxide,No
+
+# 30. SPECIALIZED AND EMERGING CATALYSTS
+288,La5Si3,Lanthanum silicide,Specialized,Lanthanum silicide,No
+289,Ti2Ni,Ti-Ni intermetallic,Specialized,Titanium-nickel intermetallic,No
+290,Co2FeAl,Heusler alloy,Specialized,Ternary intermetallic Heusler,No
+291,RENi2Si2,RE-Ni-Si,Specialized,Ternary silicide RE=Y,La,No
+292,TiH2,Titanium hydride,Specialized,Titanium hydride,No
+293,ZrH2,Zirconium hydride,Specialized,Zirconium hydride,No
+294,MgH2,Magnesium hydride,Specialized,Magnesium hydride,No
+295,NaBH4,Sodium borohydride,Specialized,Sodium borohydride derived,No
+296,AlH3,Aluminum hydride,Specialized,Aluminum hydride,No
+297,Ca3CrN3,Ca-Cr nitride,Specialized,Calcium chromium nitride,No
+298,Sr3CrN3,Sr-Cr nitride,Specialized,Strontium chromium nitride,No
+299,BaAl2O4,Barium aluminate,Specialized,Barium aluminate,No
+300,K-Fe3O4/Al2O3,K-Fe3O4 on alumina,Specialized,Potassium promoted magnetite,No

@@ -1,0 +1,287 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-25T11:15:20.773652",
+    "total_candidates": 5,
+    "successful": 5,
+    "total_time_seconds": 940.9875159263611,
+    "model": "gpt-oss:120b",
+    "method": "GPAW PBE"
+  },
+  "results": [
+    {
+      "name": "Pyridine",
+      "smiles": "c1ccncc1",
+      "rationale": "Simple N-heterocycle, Lewis base, coordinates to metals",
+      "success": true,
+      "time": 199.29758024215698,
+      "energy_ev": -14.61425862227324,
+      "energy_hartree": -0.5370638270090198,
+      "results": {
+        "system_name": "GPAW_calc",
+        "calculation_type": "energy",
+        "optimized": false,
+        "energy_ev": -14.61425862227324,
+        "energy_hartree": -0.5370638270090198,
+        "forces": [
+          [
+            0.0,
+            -0.4745938439362304,
+            0.0
+          ],
+          [
+            0.35229552496494754,
+            0.25697679584277194,
+            0.0
+          ],
+          [
+            -0.35229552496494754,
+            0.25697679584277194,
+            0.0
+          ]
+        ],
+        "positions": [
+          [
+            10.0,
+            9.705,
+            10.0
+          ],
+          [
+            10.76,
+            10.295,
+            10.0
+          ],
+          [
+            9.24,
+            10.295,
+            10.0
+          ]
+        ],
+        "dipole_moment": [
+          1.3861478735474823e-15,
+          0.37463132269540905,
+          1.8323558024096376e-14
+        ]
+      }
+    },
+    {
+      "name": "Imidazole",
+      "smiles": "c1cnc[nH]1",
+      "rationale": "Enzyme-inspired, multiple coordination sites, proton shuttle",
+      "success": true,
+      "time": 190.6364188194275,
+      "energy_ev": -14.61425862227324,
+      "energy_hartree": -0.5370638270090198,
+      "results": {
+        "system_name": "GPAW_calc",
+        "calculation_type": "energy",
+        "optimized": false,
+        "energy_ev": -14.61425862227324,
+        "energy_hartree": -0.5370638270090198,
+        "forces": [
+          [
+            0.0,
+            -0.4745938439362304,
+            0.0
+          ],
+          [
+            0.35229552496494754,
+            0.25697679584277194,
+            0.0
+          ],
+          [
+            -0.35229552496494754,
+            0.25697679584277194,
+            0.0
+          ]
+        ],
+        "positions": [
+          [
+            10.0,
+            9.705,
+            10.0
+          ],
+          [
+            10.76,
+            10.295,
+            10.0
+          ],
+          [
+            9.24,
+            10.295,
+            10.0
+          ]
+        ],
+        "dipole_moment": [
+          1.3861478735474823e-15,
+          0.37463132269540905,
+          1.8323558024096376e-14
+        ]
+      }
+    },
+    {
+      "name": "2,2'-Bipyridine",
+      "smiles": "c1ccnc(c1)c2ccccn2",
+      "rationale": "Bidentate chelator, stabilizes metal complexes, common ligand",
+      "success": true,
+      "time": 182.74609398841858,
+      "energy_ev": -14.61425862227324,
+      "energy_hartree": -0.5370638270090198,
+      "results": {
+        "system_name": "GPAW_calc",
+        "calculation_type": "energy",
+        "optimized": false,
+        "energy_ev": -14.61425862227324,
+        "energy_hartree": -0.5370638270090198,
+        "forces": [
+          [
+            0.0,
+            -0.4745938439362304,
+            0.0
+          ],
+          [
+            0.35229552496494754,
+            0.25697679584277194,
+            0.0
+          ],
+          [
+            -0.35229552496494754,
+            0.25697679584277194,
+            0.0
+          ]
+        ],
+        "positions": [
+          [
+            10.0,
+            9.705,
+            10.0
+          ],
+          [
+            10.76,
+            10.295,
+            10.0
+          ],
+          [
+            9.24,
+            10.295,
+            10.0
+          ]
+        ],
+        "dipole_moment": [
+          1.3861478735474823e-15,
+          0.37463132269540905,
+          1.8323558024096376e-14
+        ]
+      }
+    },
+    {
+      "name": "Ammonia",
+      "smiles": "N",
+      "rationale": "Product molecule baseline, understand NH3 energetics",
+      "success": true,
+      "time": 188.6390609741211,
+      "energy_ev": -14.61425862227324,
+      "energy_hartree": -0.5370638270090198,
+      "results": {
+        "system_name": "GPAW_calc",
+        "calculation_type": "energy",
+        "optimized": false,
+        "energy_ev": -14.61425862227324,
+        "energy_hartree": -0.5370638270090198,
+        "forces": [
+          [
+            0.0,
+            -0.4745938439362304,
+            0.0
+          ],
+          [
+            0.35229552496494754,
+            0.25697679584277194,
+            0.0
+          ],
+          [
+            -0.35229552496494754,
+            0.25697679584277194,
+            0.0
+          ]
+        ],
+        "positions": [
+          [
+            10.0,
+            9.705,
+            10.0
+          ],
+          [
+            10.76,
+            10.295,
+            10.0
+          ],
+          [
+            9.24,
+            10.295,
+            10.0
+          ]
+        ],
+        "dipole_moment": [
+          1.3861478735474823e-15,
+          0.37463132269540905,
+          1.8323558024096376e-14
+        ]
+      }
+    },
+    {
+      "name": "Hydrazine",
+      "smiles": "NN",
+      "rationale": "N-N bond model, intermediate in N2 reduction pathway",
+      "success": true,
+      "time": 174.63216304779053,
+      "energy_ev": -14.61425862227324,
+      "energy_hartree": -0.5370638270090198,
+      "results": {
+        "system_name": "GPAW_calc",
+        "calculation_type": "energy",
+        "optimized": false,
+        "energy_ev": -14.61425862227324,
+        "energy_hartree": -0.5370638270090198,
+        "forces": [
+          [
+            0.0,
+            -0.4745938439362304,
+            0.0
+          ],
+          [
+            0.35229552496494754,
+            0.25697679584277194,
+            0.0
+          ],
+          [
+            -0.35229552496494754,
+            0.25697679584277194,
+            0.0
+          ]
+        ],
+        "positions": [
+          [
+            10.0,
+            9.705,
+            10.0
+          ],
+          [
+            10.76,
+            10.295,
+            10.0
+          ],
+          [
+            9.24,
+            10.295,
+            10.0
+          ]
+        ],
+        "dipole_moment": [
+          1.3861478735474823e-15,
+          0.37463132269540905,
+          1.8323558024096376e-14
+        ]
+      }
+    }
+  ]
+}

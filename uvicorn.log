@@ -1,0 +1,984 @@
+INFO:     Will watch for changes in these directories: ['/Users/stevens/Dropbox/Backplane']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [82558] using WatchFiles
+INFO:     Started server process [82561]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:62399 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62525 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62604 - "GET /job_status/e8a01d6f-3a7b-4bc5-b6d1-770f3bd385db HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62614 - "GET /job_status/e8a01d6f-3a7b-4bc5-b6d1-770f3bd385db HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62639 - "GET /job_status/e8a01d6f-3a7b-4bc5-b6d1-770f3bd385db HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'generate_femo_report.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [82561]
+INFO:     Started server process [89533]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:62986 - "GET /job_status/e8a01d6f-3a7b-4bc5-b6d1-770f3bd385db HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63041 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63115 - "GET /job_status/02143f19-50e4-45d0-a586-fcce951874ca HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63121 - "GET /job_status/02143f19-50e4-45d0-a586-fcce951874ca HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63123 - "GET /job_status/02143f19-50e4-45d0-a586-fcne951874ca HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63126 - "GET /job_status/02143f19-50e4-45d0-a586-fcce951874ca HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'nh3_catalyst_screening.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [89533]
+INFO:     Started server process [93979]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:63796 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63836 - "GET /job_status/81a71fbb-3f7f-4e49-a859-1a424ec650dd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63864 - "GET /job_status/81a71fbb-3f7f-4e49-a859-1a424ec650dd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63899 - "GET /job_status/81a71fbb-3f7f-4e49-a859-1a424ec650dd HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'nh3_fast_screening.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [93979]
+INFO:     Started server process [12554]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:64235 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64243 - "GET /job_status/8a790a7f-d7e4-4a07-9d7c-cce795db9f96 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64255 - "GET /job_status/8a790a7f-d7e4-4a07-9d7c-cce795db9f96 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64256 - "GET /job_status/8a790a7f-d7e4-4a07-9d7c-cce795db9f96 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64295 - "GET /job_status/8a790a7f-d7e4-4a07-9d7c-cce795db9f96 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64301 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64307 - "GET /job_status/298bf077-ac9a-4898-b507-ff16222a93a4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64322 - "GET /job_status/298bf077-ac9a-4898-b507-ff16222a93a4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64325 - "GET /job_status/298bf077-ac9a-4898-b507-ff16222a93a4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64403 - "GET /job_status/298bf077-ac9a-4898-b507-ff16222a93a4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64413 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64425 - "GET /job_status/786a49b8-9ded-4837-a546-f35c48dfcc06 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64429 - "GET /job_status/786a49b8-9ded-4837-a546-f35c48dfcc06 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64432 - "GET /job_status/786a49b8-9ded-4837-a546-f35c48dfcc06 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64472 - "GET /job_status/786a49b8-9ded-4837-a546-f35c48dfcc06 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64478 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64492 - "GET /job_status/12e46823-79d9-4eaa-89d2-7823e6fb2fd5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64496 - "GET /job_status/12e46823-79d9-aa-89d2-7823e6fb2fd5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64497 - "GET /job_status/12e46823-79d9-4eaa-89d2-7823e6fb2fd5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64576 - "GET /job_status/12e46823-79d9-4eaa-89d2-7823e6fb2fd5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64592 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64595 - "GET /job_status/377f9c50-feda-4096-9294-7afed2da98c3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64597 - "GET /job_status/377f9c50-feda-4096-9294-7afed2da98c3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64601 - "GET /job_status/377f9c50-feda-4096-9294-7afed2da98c3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64646 - "GET /job_status/377f9c50-feda-4096-9294-7afed2da98c3 HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'wrappers/gpaw_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [12554]
+WARNING:  WatchFiles detected changes in 'wrappers/gpaw_wrapper.py'. Reloading...
+INFO:     Started server process [51135]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [51136]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'test_smiles_fix.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [51136]
+WARNING:  WatchFiles detected changes in 'test_smiles_fix.py'. Reloading...
+INFO:     Started server process [51522]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [51527]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'nh3_corrected_screening.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [51527]
+WARNING:  WatchFiles detected changes in 'nh3_corrected_screening.py'. Reloading...
+INFO:     Started server process [52428]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [52433]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'query_additional_catalysts.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [52433]
+INFO:     Started server process [60167]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'query_additional_catalysts.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [60167]
+INFO:     Started server process [60169]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'nh3_expanded_screening.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [60169]
+WARNING:  WatchFiles detected changes in 'nh3_expanded_screening.py'. Reloading...
+INFO:     Started server process [80718]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [80719]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:56180 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56192 - "GET /job_status/4909cdce-9ed1-4872-bfcd-c7e1515ff4aa HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56201 - "GET /job_status/4909cdce-9ed1-4872-bfcd-c7e1515ff4aa HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56204 - "GET /job_status/4909cdce-9ed1-4872-bfcd-c7e1515ff4aa HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56294 - "GET /job_status/4909cdce-9ed1-4872-bfcd-c7e1515ff4aa HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56298 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56318 - "GET /job_status/2fdf723b-c461-4c2c-81d2-016db7feb1fd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56322 - "GET /job_status/2fdf723b-c461-4c2c-81d2-016db7feb1fd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56380 - "GET /job_status/2fdf723b-c461-4c2c-81d2-016db7feb1fd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56397 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56401 - "GET /job_status/fd2aada9-7291-4d31-9ddf-364a230fb5e1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56402 - "GET /job_status/fd2aada9-7291-4d31-9ddf-364a230fb5e1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56494 - "GET /job_status/fd2aada9-7291-4d31-9ddf-364a230fb5e1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56499 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56513 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56518 - "GET /job_status/07efe768-6657-4304-96c7-49931e351360 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56532 - "GET /job_status/c2e7b8f4-cefb-4edc-85c3-ad42bc91f1f1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56537 - "GET /job_status/c2e7b8f4-cefb-4edc-85c3-ad42bc91f1f1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56595 - "GET /job_status/c2e7b8f4-cefb-4edc-85c3-ad42bc91f1f1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56606 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56630 - "GET /job_status/0241acbc-1933-4864-8eb7-ed4a9fbdf8cf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56634 - "GET /job_status/0241acbc-1933-4864-8eb7-ed4a9fbdf8cf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56644 - "GET /job_status/0241acbc-1933-4864-8eb7-ed4a9fbdf8cf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56710 - "GET /job_status/0241acbc-1933-4864-8eb7-ed4a9fbdf8cf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56716 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56723 - "GET /job_status/dd0cef48-6aa8-4118-8cb3-30c5acc55233 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56732 - "GET /job_status/dd0cef48-6aa8-4118-8cb3-30c5acc55233 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56789 - "GET /job_status/dd0cef48-6aa8-4118-8cb3-30c5acc55233 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56793 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56803 - "GET /job_status/e6c3f35a-7054-4951-9016-9debaea4d0b4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56813 - "GET /job_status/e6c3f35a-7054-4951-9016-9debaea4d0b4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56911 - "GET /job_status/e6c3f35a-7054-4951-9016-9debaea4d0b4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56925 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56926 - "GET /job_status/07fcd187-cc18-4a3b-99eb-e723a03f54f3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56931 - "GET /job_status/07fcd187-cc18-4a3b-99eb-e723a03f54f3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56941 - "GET /job_status/07fcd187-cc18-4a3b-99eb-e723a03f54f3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57017 - "GET /job_status/07fcd187-cc18-4a3b-99eb-e723a03f54f3 HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'test_single_pyridine.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [80719]
+INFO:     Started server process [12477]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'test_single_pyridine.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [12477]
+INFO:     Started server process [12478]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:58260 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58272 - "GET /job_status/c62f3e44-d914-4734-b5f1-c651f6cdea1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58275 - "GET /job_status/c62f3e44-d914-4734-b5f1-c651f6cdea1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58277 - "GET /job_status/c62f3e44-d914-4734-b5f1-c651f6cdea1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58283 - "GET /job_status/c62f3e44-d914-4734-b5f1-c651f6cdea1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58293 - "GET /job_status/c62f3e44-d914-4734-b5f1-c651f6cdea1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58317 - "GET /job_status/c62f3e44-d914-4734-b5f1-c651f6cdea1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58327 - "GET /job_status/c62f3e44-d914-4734-b5f1-c651f6cdea1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58335 - "GET /job_status/c62f3e44-d914-4734-b5f1-c651f6cdea1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58363 - "GET /job_status/c62f3e44-d914-4734-b5f1-c651f6cdea1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58373 - "GET /job_status/c62f3e44-d914-4734-b5f1-c651f6cdea1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58529 - "GET /job_status/c62f3e44-d914-4734-b5f1-c651f6cdea1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58914 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59178 - "GET /job_status/56eeba80-1ce0-44af-8a26-1cc6bcf3bb76 HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'mace_client.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [12478]
+WARNING:  WatchFiles detected changes in 'mace_client.py'. Reloading...
+INFO:     Started server process [36629]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [36631]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [36631]
+INFO:     Started server process [38991]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [38991]
+INFO:     Started server process [38993]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [38993]
+INFO:     Started server process [39399]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [39399]
+INFO:     Started server process [39401]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [39401]
+INFO:     Started server process [39817]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [39817]
+INFO:     Started server process [39819]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [39819]
+INFO:     Started server process [40278]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [40278]
+INFO:     Started server process [40294]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [40294]
+INFO:     Started server process [40739]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [40739]
+INFO:     Started server process [40740]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:59818 - "GET /job_status/56eeba80-1ce0-44af-8a26-1cc6bcf3bb76 HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'test_mace_integration.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [40740]
+INFO:     Started server process [41494]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'test_mace_integration.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [41494]
+INFO:     Started server process [42185]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'mace_client.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [42185]
+INFO:     Started server process [45433]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'mace_client.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45433]
+INFO:     Started server process [45434]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'mace_client.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45434]
+INFO:     Started server process [45974]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'mace_client.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45974]
+INFO:     Started server process [45975]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:60420 - "POST /submit_app_job HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'mace_client_simple.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45975]
+INFO:     Started server process [49201]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'mace_client_simple.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [49201]
+INFO:     Started server process [49202]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:60461 - "GET /job_status/72912c09-302b-4930-943b-dfc5952f383e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60490 - "GET /job_status/72912c09-302b-4930-943b-dfc5952f383e HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [49202]
+INFO:     Started server process [50521]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [50521]
+INFO:     Started server process [50523]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [50523]
+INFO:     Started server process [50970]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [50970]
+INFO:     Started server process [50971]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:60533 - "GET /job_status/72912c09-302b-4930-943d-dfc5952f383e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60547 - "GET /job_status/72912c09-302b-4930-943b-dfc5952f383e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60778 - "GET /job_status/72912c09-302b-4930-943b-dfc5952f383e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61242 - "GET /job_status/72912c09-302b-4930-943b-dfc5952f383e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61258 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61263 - "GET /job_status/8e8faea6-0691-420b-9bd4-ee95f0242abc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61268 - "GET /job_status/8e8faea6-0691-420b-9bd4-ee95f0242abc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61273 - "GET /job_status/8e8faea6-0691-420b-9bd4-ee95f0242abc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61286 - "GET /job_status/8e8faea6-0691-420b-9bd4-ee95f0242abc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61290 - "GET /job_status/8e8faea6-0691-420b-9bd4-ee95f0242abc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61294 - "GET /job_status/8e8faea6-0691-420b-9bd4-ee95f0242abc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61299 - "GET /job_status/8e8faea6-0691-420b-9bd4-ee95f0242abc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61310 - "GET /job_status/8e8faea6-0691-420b-9bd4-ee95f0242abc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61314 - "GET /job_status/8e8faea6-0691-420b-9bd4-ee95f0242abc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61316 - "GET /job_status/8e8faea6-0691-420b-9bd4-ee95f0242abc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61321 - "GET /job_status/8e8faea6-0691-420b-9bd4-ee95f0242abc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61336 - "GET /job_status/8e8faea6-0691-420b-9bd4-ee95f0242abc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61341 - "GET /job_status/8e8faea6-0691-420b-9bd4-ee95f0242abc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61351 - "GET /job_status/8e8faea6-0691-420b-9bd4-ee95f0242abc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61369 - "GET /job_status/8e8faea6-0691-420b-9bd4-ee95f0242abc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61372 - "GET /job_status/8e8faea6-0691-420b-9bd4-ee95f0242abc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61379 - "GET /job_status/8e8faea6-0691-420b-9bd4-ee95f0242abc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61501 - "GET /job_status/8e8faea6-0691-420b-9bd4-ee95f0242abc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61524 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61530 - "GET /job_status/8be24a71-e2ee-4809-9bc6-e6fb24ae1abe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61542 - "GET /job_status/8be24a71-e2ee-4809-9bc6-e6fb24ae1abe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61546 - "GET /job_status/8be24a71-e2ee-4809-9bc6-e6fb24ae1abe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61613 - "GET /job_status/8be24a71-e2ee-4809-9bc6-e6fb24ae1abe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61646 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61649 - "GET /job_status/b0879fb1-d735-4a85-8e3c-933f02231200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61651 - "GET /job_status/b0879fb1-d735-4a85-8e3c-933f02231200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61657 - "GET /job_status/b0879fb1-d735-4a85-8e3c-933f02231200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61663 - "GET /job_status/b0879fb1-d735-4a85-8e3c-933f02231200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61740 - "GET /job_status/b0879fb1-d735-4a85-8e3c-933f02231200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61753 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61769 - "GET /job_status/92df2133-b303-4c05-b5d7-7ae2453469fa HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61781 - "GET /job_status/92df2133-b303-04c05-b5d7-7ae2453469fa HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61784 - "GET /job_status/92df2133-b303-4c05-b5d7-7ae2453469fa HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61788 - "GET /job_status/92df2133-b303-4c05-b5d7-7ae2453469fa HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61792 - "GET /job_status/92df2133-b303-4c05-b5d7-7ae2453469fa HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61804 - "GET /job_status/92df2133-b303-4c05-b5d7-7ae2453469fa HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61881 - "GET /job_status/92df2133-b303-4c05-b5d7-7ae2453469fa HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61919 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61932 - "GET /job_status/59f0c6ab-89f3-4099-8108-0e2318293a03 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61936 - "GET /job_status/59f0c6ab-89f3-4099-8108-0e2318293a03 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61942 - "GET /job_status/59f0c6ab-89f3-4099-8108-0e2318293a03 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61946 - "GET /job_status/59f0c6ab-89f3-4099-8108-0e2318293a03 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61958 - "GET /job_status/59f0c6ab-89f3-4099-8108-0e2318293a03 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61962 - "GET /job_status/59f0c6ab-89f3-4099-8108-0e2318293a03 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61965 - "GET /job_status/59f0c6ab-89f3-4099-8108-0e2318293a03 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62041 - "GET /job_status/59f0c6ab-89f3-4099-8108-0e2318293a03 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62073 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62091 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62094 - "GET /job_status/e9421c88-584a-4178-ba6f-41064a3800cf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62116 - "GET /job_status/dea8c607-2fd9-4751-9fc3-94ddc22e3f40 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62118 - "GET /job_status/dea8c607-2fd9-4751-9fc3-94ddc22e3f40 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62126 - "GET /job_status/dea8c607-2fd9-4751-9fc3-94ddc22e3f40 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62137 - "GET /job_status/dea8c607-2fd9-4751-9fc3-94ddc22e3f40 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62161 - "GET /job_status/dea8c607-2fd9-4751-9fc3-94ddc22e3f40 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62227 - "GET /job_status/dea8c607-2fd9-4751-9fc3-94ddc22e3f40 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62310 - "GET /job_status/dea8c607-2fd9-4751-9fc3-94ddc22e3f40 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62385 - "GET /job_status/dea8c607-2fd9-4751-9fc3-94ddc22e3f40 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62400 - "GET /job_status/dea8c607-2fd9-4751-9fc3-94ddc22e3f40 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62420 - "GET /job_status/dea8c607-2fd9-4751-9fc3-94ddc22e3f40 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62531 - "GET /job_status/dea8c607-2fd9-4751-9fc3-94ddc22e3f40 HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'build_metal_catalysts.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [50971]
+INFO:     Started server process [74825]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'build_metal_catalysts.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [74825]
+INFO:     Started server process [74826]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'screen_metal_catalysts_mace.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [74826]
+INFO:     Started server process [75859]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'screen_metal_catalysts_mace.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [75859]
+INFO:     Started server process [75876]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'validate_metal_catalysts_dft.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [75876]
+INFO:     Started server process [79627]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'validate_metal_catalysts_dft.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [79627]
+INFO:     Started server process [79782]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/cp2k_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [79782]
+WARNING:  WatchFiles detected changes in 'wrappers/cp2k_wrapper.py'. Reloading...
+INFO:     Started server process [97423]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [97424]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/cp2k_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [97424]
+INFO:     Started server process [97925]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/cp2k_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [97925]
+INFO:     Started server process [97926]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/gpaw_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [97926]
+INFO:     Started server process [716]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/gpaw_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [716]
+INFO:     Started server process [725]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/gpaw_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [725]
+INFO:     Started server process [1911]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/gpaw_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1911]
+INFO:     Started server process [1912]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'test_xyz_cp2k.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1912]
+WARNING:  WatchFiles detected changes in 'test_xyz_cp2k.py'. Reloading...
+INFO:     Started server process [29236]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [29237]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [29237]
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Started server process [39560]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [39562]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [39562]
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Started server process [40717]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [40719]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [40719]
+WARNING:  WatchFiles detected changes in 'agent_apps.py'. Reloading...
+INFO:     Started server process [44623]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [44624]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:54160 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54167 - "GET /job_status/00d18f8f-c114-41ce-900e-c8b9a8bd9f1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54171 - "GET /job_status/00d18f8f-c114-41ce-900e-c8b9a8bd9f1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54176 - "GET /job_status/00d18f8f-c114-41ce-900e-c8b9a8bd9f1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54178 - "GET /job_status/00d18f8f-c114-41ce-900e-c8b9a8bd9f1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54182 - "GET /job_status/00d18f8f-c114-41ce-900e-c8b9a8bd9f1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54205 - "GET /job_status/00d18f8f-c114-41ce-900e-c8b9a8bd9f1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54233 - "GET /job_status/00d18f8f-c114-41ce-900e-c8b9a8bd9f1c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54442 - "POST /submit_app_job HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54508 - "GET /job_status/4ee3adcb-6138-4d51-b79f-10838a5325ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54573 - "GET /job_status/4ee3adcb-6138-4d51-b79f-10838a5325ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54609 - "GET /job_status/4ee3adcb-6138-4d51-b79f-10838a5325ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54640 - "GET /job_status/4ee3adcb-6138-4d51-b79f-10838a5325ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54705 - "GET /job_status/4ee3adcb-6138-4d51-b79f-10838a5325ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54771 - "GET /job_status/4ee3adcb-6138-4d51-b79f-10838a5325ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54857 - "GET /job_status/4ee3adcb-6138-4d51-b79f-10838a5325ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54863 - "GET /job_status/4ee3adcb-6138-4d51-b79f-10838a5325ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54869 - "GET /job_status/4ee3adcb-6138-4d51-b79f-10838a5325ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54870 - "GET /job_status/4ee3adcb-6138-4d51-b79f-10838a5325ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54875 - "GET /job_status/4ee3adcb-6138-4d51-b79f-10838a5325ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54883 - "GET /job_status/4ee3adcb-6138-4d51-b79f-10838a5325ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54884 - "GET /job_status/4ee3adcb-6138-4d51-b79f-10838a5325ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54964 - "GET /job_status/4ee3adcb-6138-4d51-b79f-10838a5325ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54970 - "GET /job_status/4ee3adcb-6138-4d51-b79f-10838a5325ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54994 - "GET /job_status/4ee3adcb-6138-4d51-b79f-10838a5325ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57625 - "GET /docs HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'generate_and_test_molecules.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [44624]
+WARNING:  WatchFiles detected changes in 'generate_and_test_molecules.py'. Reloading...
+INFO:     Started server process [99133]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [99196]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'expand_nh3_catalysts_iterative.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [99196]
+WARNING:  WatchFiles detected changes in 'expand_nh3_catalysts_iterative.py'. Reloading...
+INFO:     Started server process [21686]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [21718]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'expand_nh3_direct.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [21718]
+INFO:     Started server process [73293]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'expand_nh3_direct.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [73293]
+INFO:     Started server process [74077]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'expand_nh3_catalysts_iterative.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [74077]
+WARNING:  WatchFiles detected changes in 'expand_nh3_catalysts_iterative.py'. Reloading...
+INFO:     Started server process [79008]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [79009]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'screen_nh3_catalysts.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [79009]
+WARNING:  WatchFiles detected changes in 'screen_nh3_catalysts.py'. Reloading...
+INFO:     Started server process [89693]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [89727]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'screen_nh3_catalysts.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [89727]
+INFO:     Started server process [91489]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'smiles_converter.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [91489]
+WARNING:  WatchFiles detected changes in 'smiles_converter.py'. Reloading...
+INFO:     Started server process [26533]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [26534]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/quantum_espresso.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [26534]
+INFO:     Started server process [30341]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/quantum_espresso.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [30341]
+INFO:     Started server process [30588]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/quantum_espresso.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [30588]
+INFO:     Started server process [31383]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/quantum_espresso.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [31383]
+INFO:     Started server process [31549]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/lammps_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [31549]
+INFO:     Started server process [33894]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/lammps_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [33894]
+INFO:     Started server process [33994]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/lammps_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [33994]
+INFO:     Started server process [34762]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/lammps_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [34762]
+INFO:     Started server process [34796]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/lammps_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [34796]
+INFO:     Started server process [35550]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/lammps_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [35550]
+INFO:     Started server process [35611]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/gromacs_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [35611]
+INFO:     Started server process [39615]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/gromacs_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [39615]
+INFO:     Started server process [39649]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/gromacs_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [39649]
+INFO:     Started server process [41068]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/gromacs_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [41068]
+INFO:     Started server process [41301]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'test_smiles_converter.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [41301]
+INFO:     Started server process [48117]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'test_smiles_converter.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [48117]
+INFO:     Started server process [48118]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'test_smiles_converter.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [48118]
+INFO:     Started server process [48996]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'cif_parser.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [48996]
+WARNING:  WatchFiles detected changes in 'cif_parser.py'. Reloading...
+INFO:     Started server process [68519]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [68520]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/quantum_espresso.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [68520]
+INFO:     Started server process [72061]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/quantum_espresso.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [72061]
+INFO:     Started server process [72062]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/quantum_espresso.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [72062]
+INFO:     Started server process [73771]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/quantum_espresso.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [73771]
+INFO:     Started server process [73802]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'add_cif_support.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [73802]
+WARNING:  WatchFiles detected changes in 'add_cif_support.py'. Reloading...
+INFO:     Started server process [77310]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [77344]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/lammps_wrapper.py', 'wrappers/cp2k_wrapper.py', 'wrappers/gromacs_wrapper.py', 'wrappers/gpaw_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [77344]
+INFO:     Started server process [78258]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'APPS/orca/datasets/DatasetsInfo/GMTKN55/__init__.py', 'APPS/orca/datasets/DatasetsInfo/GMTKN55/GMTKN55_helping_functions.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [78258]
+INFO:     Started server process [23745]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'APPS/orca/datasets/DatasetsInfo/GMTKN55/__init__.py', 'APPS/orca/datasets/DatasetsInfo/GMTKN55/GMTKN55_helping_functions.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [23745]
+INFO:     Started server process [26855]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/orca_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [26855]
+WARNING:  WatchFiles detected changes in 'wrappers/orca_wrapper.py'. Reloading...
+INFO:     Started server process [75528]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [75657]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/nwchem_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [75657]
+INFO:     Started server process [78382]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/nwchem_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [78382]
+INFO:     Started server process [78513]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/pyscf_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [78513]
+INFO:     Started server process [80737]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'wrappers/pyscf_wrapper.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [80737]
+INFO:     Started server process [81065]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

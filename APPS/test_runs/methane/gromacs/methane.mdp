@@ -1,0 +1,9 @@
+integrator       = steep
+nsteps           = 0
+cutoff-scheme    = verlet
+coulombtype      = Cut-off
+rcoulomb         = 0.5
+rvdw             = 0.5
+rlist            = 0.5
+constraints      = none
+ld_seed          = 12345

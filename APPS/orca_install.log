@@ -1,0 +1,10 @@
+=== ORCA 6.0.0 Installation Log ===
+Date: Thu Nov 27 13:48:02 CST 2025
+Version: 6.0.0 (RELEASE)
+Location: /Users/stevens/Dropbox/Backplane/APPS/orca/
+Size: 1.8 GB
+
+Test Calculation: B3LYP/def2-SVP on H2O
+Energy: -76.321089291903 Hartree
+Runtime: 0.612 seconds
+Status: SUCCESS

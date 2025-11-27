@@ -1,0 +1,11 @@
+Collecting pyscf
+  Obtaining dependency information for pyscf from https://files.pythonhosted.org/packages/2a/4f/01a2b5b2a3aac945fd701b347aba78f4d9bf4faadb42622a416ec88c58aa/pyscf-2.11.0-py3-none-macosx_11_0_arm64.whl.metadata
+  Downloading pyscf-2.11.0-py3-none-macosx_11_0_arm64.whl.metadata (6.4 kB)
+Requirement already satisfied: numpy!=1.16,!=1.17,>=1.13 in /Users/stevens/opt/anaconda3/lib/python3.9/site-packages (from pyscf) (1.26.4)
+Requirement already satisfied: scipy>=1.6.0 in /Users/stevens/opt/anaconda3/lib/python3.9/site-packages (from pyscf) (1.13.1)
+Requirement already satisfied: h5py>=2.7 in /Users/stevens/opt/anaconda3/lib/python3.9/site-packages (from pyscf) (3.7.0)
+Requirement already satisfied: setuptools in /Users/stevens/opt/anaconda3/lib/python3.9/site-packages (from pyscf) (68.0.0)
+Downloading pyscf-2.11.0-py3-none-macosx_11_0_arm64.whl (35.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.1/35.1 MB 23.6 MB/s eta 0:00:00
+Installing collected packages: pyscf
+Successfully installed pyscf-2.11.0

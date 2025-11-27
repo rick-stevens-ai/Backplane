@@ -1,0 +1,62 @@
+# NH3 FORMATION CATALYST CANDIDATES
+# 20 promising candidates for N2 + H2 → NH3 catalysis
+
+1. [Fe(N₂)(CO)₄]⁻ - Homogeneous (anion)
+   Strong back‑bonding to N₂, labile CO ligands for H₂ uptake
+
+2. [Ru(N₂)(H)₂(PNP)] - Homogeneous (pincer)
+   Pincer scaffold enforces vacant site for N₂; two hydrides pre‑loaded
+
+3. [Mo(N₂)(CO)₅]⁻ - Homogeneous (anion)
+   High dπ → π* N₂ back‑donation, multiple CO ligands
+
+4. [W(N₂)(PMe₃)₄]⁺ - Homogeneous (cation)
+   Strong N₂ binding, labile phosphine ligands for H₂ activation
+
+5. [Ir(POCOP)(H)₂] - Homogeneous (Ir‑pincer)
+   Two trans‑hydrides ready for H‑transfer, vacant site for N₂
+
+6. [Co(bis‑diazabutadiene)(CO)₂] - Homogeneous (Co‑complex)
+   Redox‑active ligand can store electrons, CO provides labile sites
+
+7. [Ni(P₂N₂)(N₂)] - Homogeneous (Ni‑pincer)
+   Low‑spin Ni⁰ binds N₂ side‑on; pincer framework stabilises redox states
+
+8. [Re(bpy)(N₂)(CO)₃]⁺ - Homogeneous (Re‑complex)
+   Strong π‑acceptor CO ligands, redox‑active bipyridine
+
+9. [Fe₂(μ‑S)₂(CO)₆] - Homogeneous (cluster)
+   Fe–Fe bond provides electron reservoir; sulfide bridge mimics nitrogenase
+
+10. [MoFe₃S₄(CO)₉]⁻ - Homogeneous (cluster)
+    Cubane core supplies multi‑electron reduction
+
+11. Fe(111) surface - Heterogeneous (single‑atom)
+    Isolated Fe atom, graphene facilitates H₂ spill‑over
+
+12. Ru(0001) surface - Heterogeneous (metal surface)
+    Classical Haber‑Bosch catalyst
+
+13. Co‑doped MoS₂ - Heterogeneous (2‑D chalcogenide)
+    S‑vacancies for N₂, Co introduces d‑states for H₂
+
+14. Fe‑N‑C - Heterogeneous (single‑site)
+    Fe‑N₄ mimics nitrogenase active site
+
+15. Supported Ru‑pincer on silica - Heterogeneous (organometallic)
+    Molecular pincer + high surface area
+
+16. [Os(N₂)(H)₂(PMe₃)₄] - Homogeneous (Os‑complex)
+    Strong N₂ back‑bonding, two hydrides pre‑installed
+
+17. [Ti(η⁶‑C₆H₆)(N₂)(H)₂] - Homogeneous (Ti⁰)
+    Benzene stabilises low‑valent Ti, N₂ side‑on binding
+
+18. [V(N₂)(CO)₄]⁻ - Homogeneous (anion)
+    High d‑electron count for strong N₂ back‑bonding
+
+19. [Mn(bpy)(N₂)(CO)₃]⁺ - Homogeneous (Mn‑complex)
+    Cheap first‑row metal, bipyridine mediates electron flow
+
+20. Pd‑nanoclusters on TiO₂ - Heterogeneous (photo‑thermal)
+    Pd dissociates H₂, TiO₂ assists N₂ activation under light

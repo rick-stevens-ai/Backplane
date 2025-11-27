@@ -1,0 +1,34 @@
+
+                  :-) GROMACS - gmx mdrun, 2025.4-Homebrew (-:
+
+Executable:   /opt/homebrew/bin/../Cellar/gromacs/2025.4/bin/gmx
+Data prefix:  /opt/homebrew/bin/../Cellar/gromacs/2025.4
+Working dir:  /Users/stevens/Dropbox/Backplane/APPS/test_runs/methane/gromacs
+Command line:
+  gmx mdrun -s methane.tpr -ntmpi 1 -ntomp 1 -nsteps 0 -deffnm methane
+
+Reading file methane.tpr, VERSION 2025.4-Homebrew (single precision)
+Overriding nsteps with value passed on the command line: 0 steps
+
+Using 1 MPI thread
+Using 1 OpenMP thread 
+
+
+Steepest Descents:
+   Tolerance (Fmax)   =  1.00000e+01
+   Number of steps    =            0
+
+Energy minimization reached the maximum number of steps before the forces
+reached the requested precision Fmax < 10.
+
+writing lowest energy coordinates.
+
+Back Off! I just backed up methane.gro to ./#methane.gro.1#
+
+Steepest Descents did not converge to Fmax < 10 in 1 steps.
+Potential Energy  =  4.3860714e+01
+Maximum force     =  2.4978870e+03 on atom 3
+Norm of force     =  2.2341728e+03
+
+GROMACS reminds you: "If we are going to have SYCL, can we have a hammer as well?" (Joe Jordan)
+

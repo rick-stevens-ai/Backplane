@@ -1,0 +1,48 @@
+Generated 330891 of the 330891 non-bonded parameter combinations
+
+Generated 330891 of the 330891 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'METH'
+Analysing residue names:
+There are:     1      Other residues
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+
+This run will generate roughly 0 Mb of data
+
+                 :-) GROMACS - gmx grompp, 2025.4-Homebrew (-:
+
+Executable:   /opt/homebrew/bin/../Cellar/gromacs/2025.4/bin/gmx
+Data prefix:  /opt/homebrew/bin/../Cellar/gromacs/2025.4
+Working dir:  /Users/stevens/Dropbox/Backplane/APPS/test_runs/methane/gromacs
+Command line:
+  gmx grompp -f methane.mdp -c methane.gro -p methane.top -o methane.tpr
+
+
+NOTE 1 [file methane.mdp]:
+  For a correct single-point energy evaluation with nsteps = 0, use
+  continuation = yes to avoid constraining the input coordinates.
+
+Generating 1-4 interactions: fudge = 0.5
+
+NOTE 2 [file methane.top, line 31]:
+  Zero-step energy minimization will alter the coordinates before
+  calculating the energy. If you just want the energy of a single point,
+  try zero-step MD (with unconstrained_start = yes). To do multiple
+  single-point energy evaluations of different configurations of the same
+  topology, use mdrun -rerun.
+
+Number of degrees of freedom in T-Coupling group rest is 12.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+NOTE 3 [file methane.mdp]:
+  You are using a plain Coulomb cut-off, which might produce artifacts.
+  You might want to consider using PME electrostatics.
+
+
+
+There were 3 NOTEs
+
+Back Off! I just backed up methane.tpr to ./#methane.tpr.1#
+
+GROMACS reminds you: "Good judgement is the result of experience; experience is the result of bad judgement." (Mark Twain)
+

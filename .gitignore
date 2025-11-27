@@ -70,3 +70,11 @@ celerybeat.pid
 
 # Redis
 dump.rdb
+APPS/orca/
+
+# Large simulation code installations
+APPS/cp2k/
+APPS/gpaw/
+APPS/gromacs/
+APPS/lammps/
+APPS/q-e/

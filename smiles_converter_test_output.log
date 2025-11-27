@@ -1,0 +1,392 @@
+================================================================================
+SMILES CONVERTER TEST
+================================================================================
+Testing formula-to-SMILES conversion using oss120 (gpt-oss:120b)
+================================================================================
+
+
+================================================================================
+TEST 1/8: H2O (water)
+================================================================================
+
+================================================================================
+COMPUTATIONAL CHEMISTRY AGENTIC WORKFLOW
+================================================================================
+User Request: Convert the following chemical formula to a valid SMILES string:
+
+Formula: H2O
+Description: water
+
+Requirements:
+1. Provide ONLY the SMILES string as your response
+2. Ensure the SMILES is chemically valid
+3. For simple molecules (H2O, NH3, CO2), use standard SMILES
+4. For organic molecules, use standard organic chemistry SMILES notation
+5. For metal complexes:
+   - If the complex can be reasonably represented in SMILES, provide it
+   - If it's a coordination complex that cannot be properly represented in SMILES (e.g., metal clusters, extended structures), respond with "NOT_REPRESENTABLE_IN_SMILES"
+
+Examples:
+- Water (H2O) → O
+- Ammonia (NH3) → N
+- Benzene (C6H6) → c1ccccc1
+- Pyridine (C5H5N) → c1ccncc1
+- Metal cluster with 10 Ru atoms → NOT_REPRESENTABLE_IN_SMILES
+
+Provide ONLY the SMILES string or "NOT_REPRESENTABLE_IN_SMILES" as your response.
+
+
+--- Iteration 1 ---
+
+================================================================================
+AGENT RESPONSE:
+================================================================================
+O
+================================================================================
+
+✓ SUCCESS
+  Formula:     H2O
+  Description: water
+  SMILES:      O
+  Valid:       True
+
+================================================================================
+TEST 2/8: NH3 (ammonia)
+================================================================================
+
+================================================================================
+COMPUTATIONAL CHEMISTRY AGENTIC WORKFLOW
+================================================================================
+User Request: Convert the following chemical formula to a valid SMILES string:
+
+Formula: NH3
+Description: ammonia
+
+Requirements:
+1. Provide ONLY the SMILES string as your response
+2. Ensure the SMILES is chemically valid
+3. For simple molecules (H2O, NH3, CO2), use standard SMILES
+4. For organic molecules, use standard organic chemistry SMILES notation
+5. For metal complexes:
+   - If the complex can be reasonably represented in SMILES, provide it
+   - If it's a coordination complex that cannot be properly represented in SMILES (e.g., metal clusters, extended structures), respond with "NOT_REPRESENTABLE_IN_SMILES"
+
+Examples:
+- Water (H2O) → O
+- Ammonia (NH3) → N
+- Benzene (C6H6) → c1ccccc1
+- Pyridine (C5H5N) → c1ccncc1
+- Metal cluster with 10 Ru atoms → NOT_REPRESENTABLE_IN_SMILES
+
+Provide ONLY the SMILES string or "NOT_REPRESENTABLE_IN_SMILES" as your response.
+
+
+--- Iteration 1 ---
+
+================================================================================
+AGENT RESPONSE:
+================================================================================
+N
+================================================================================
+
+✓ SUCCESS
+  Formula:     NH3
+  Description: ammonia
+  SMILES:      N
+  Valid:       True
+
+================================================================================
+TEST 3/8: C6H6 (benzene)
+================================================================================
+
+================================================================================
+COMPUTATIONAL CHEMISTRY AGENTIC WORKFLOW
+================================================================================
+User Request: Convert the following chemical formula to a valid SMILES string:
+
+Formula: C6H6
+Description: benzene
+
+Requirements:
+1. Provide ONLY the SMILES string as your response
+2. Ensure the SMILES is chemically valid
+3. For simple molecules (H2O, NH3, CO2), use standard SMILES
+4. For organic molecules, use standard organic chemistry SMILES notation
+5. For metal complexes:
+   - If the complex can be reasonably represented in SMILES, provide it
+   - If it's a coordination complex that cannot be properly represented in SMILES (e.g., metal clusters, extended structures), respond with "NOT_REPRESENTABLE_IN_SMILES"
+
+Examples:
+- Water (H2O) → O
+- Ammonia (NH3) → N
+- Benzene (C6H6) → c1ccccc1
+- Pyridine (C5H5N) → c1ccncc1
+- Metal cluster with 10 Ru atoms → NOT_REPRESENTABLE_IN_SMILES
+
+Provide ONLY the SMILES string or "NOT_REPRESENTABLE_IN_SMILES" as your response.
+
+
+--- Iteration 1 ---
+
+================================================================================
+AGENT RESPONSE:
+================================================================================
+c1ccccc1
+================================================================================
+
+✓ SUCCESS
+  Formula:     C6H6
+  Description: benzene
+  SMILES:      c1ccccc1
+  Valid:       True
+
+================================================================================
+TEST 4/8: C2H5OH (ethanol)
+================================================================================
+
+================================================================================
+COMPUTATIONAL CHEMISTRY AGENTIC WORKFLOW
+================================================================================
+User Request: Convert the following chemical formula to a valid SMILES string:
+
+Formula: C2H5OH
+Description: ethanol
+
+Requirements:
+1. Provide ONLY the SMILES string as your response
+2. Ensure the SMILES is chemically valid
+3. For simple molecules (H2O, NH3, CO2), use standard SMILES
+4. For organic molecules, use standard organic chemistry SMILES notation
+5. For metal complexes:
+   - If the complex can be reasonably represented in SMILES, provide it
+   - If it's a coordination complex that cannot be properly represented in SMILES (e.g., metal clusters, extended structures), respond with "NOT_REPRESENTABLE_IN_SMILES"
+
+Examples:
+- Water (H2O) → O
+- Ammonia (NH3) → N
+- Benzene (C6H6) → c1ccccc1
+- Pyridine (C5H5N) → c1ccncc1
+- Metal cluster with 10 Ru atoms → NOT_REPRESENTABLE_IN_SMILES
+
+Provide ONLY the SMILES string or "NOT_REPRESENTABLE_IN_SMILES" as your response.
+
+
+--- Iteration 1 ---
+
+================================================================================
+AGENT RESPONSE:
+================================================================================
+CCO
+================================================================================
+
+✓ SUCCESS
+  Formula:     C2H5OH
+  Description: ethanol
+  SMILES:      CCO
+  Valid:       True
+
+================================================================================
+TEST 5/8: C5H5N (pyridine)
+================================================================================
+
+================================================================================
+COMPUTATIONAL CHEMISTRY AGENTIC WORKFLOW
+================================================================================
+User Request: Convert the following chemical formula to a valid SMILES string:
+
+Formula: C5H5N
+Description: pyridine
+
+Requirements:
+1. Provide ONLY the SMILES string as your response
+2. Ensure the SMILES is chemically valid
+3. For simple molecules (H2O, NH3, CO2), use standard SMILES
+4. For organic molecules, use standard organic chemistry SMILES notation
+5. For metal complexes:
+   - If the complex can be reasonably represented in SMILES, provide it
+   - If it's a coordination complex that cannot be properly represented in SMILES (e.g., metal clusters, extended structures), respond with "NOT_REPRESENTABLE_IN_SMILES"
+
+Examples:
+- Water (H2O) → O
+- Ammonia (NH3) → N
+- Benzene (C6H6) → c1ccccc1
+- Pyridine (C5H5N) → c1ccncc1
+- Metal cluster with 10 Ru atoms → NOT_REPRESENTABLE_IN_SMILES
+
+Provide ONLY the SMILES string or "NOT_REPRESENTABLE_IN_SMILES" as your response.
+
+
+--- Iteration 1 ---
+
+================================================================================
+AGENT RESPONSE:
+================================================================================
+c1ccncc1
+================================================================================
+
+✓ SUCCESS
+  Formula:     C5H5N
+  Description: pyridine
+  SMILES:      c1ccncc1
+  Valid:       True
+
+================================================================================
+TEST 6/8: C10H8N2 (2,2'-bipyridine)
+================================================================================
+
+================================================================================
+COMPUTATIONAL CHEMISTRY AGENTIC WORKFLOW
+================================================================================
+User Request: Convert the following chemical formula to a valid SMILES string:
+
+Formula: C10H8N2
+Description: 2,2'-bipyridine
+
+Requirements:
+1. Provide ONLY the SMILES string as your response
+2. Ensure the SMILES is chemically valid
+3. For simple molecules (H2O, NH3, CO2), use standard SMILES
+4. For organic molecules, use standard organic chemistry SMILES notation
+5. For metal complexes:
+   - If the complex can be reasonably represented in SMILES, provide it
+   - If it's a coordination complex that cannot be properly represented in SMILES (e.g., metal clusters, extended structures), respond with "NOT_REPRESENTABLE_IN_SMILES"
+
+Examples:
+- Water (H2O) → O
+- Ammonia (NH3) → N
+- Benzene (C6H6) → c1ccccc1
+- Pyridine (C5H5N) → c1ccncc1
+- Metal cluster with 10 Ru atoms → NOT_REPRESENTABLE_IN_SMILES
+
+Provide ONLY the SMILES string or "NOT_REPRESENTABLE_IN_SMILES" as your response.
+
+
+--- Iteration 1 ---
+
+================================================================================
+AGENT RESPONSE:
+================================================================================
+c1ccncc1c2ccncc2
+================================================================================
+
+✓ SUCCESS
+  Formula:     C10H8N2
+  Description: 2,2'-bipyridine
+  SMILES:      c1ccncc1c2ccncc2
+  Valid:       True
+
+================================================================================
+TEST 7/8: Fe(CO)4(N2) (iron carbonyl complex with dinitrogen)
+================================================================================
+
+================================================================================
+COMPUTATIONAL CHEMISTRY AGENTIC WORKFLOW
+================================================================================
+User Request: Convert the following chemical formula to a valid SMILES string:
+
+Formula: Fe(CO)4(N2)
+Description: iron carbonyl complex with dinitrogen
+
+Requirements:
+1. Provide ONLY the SMILES string as your response
+2. Ensure the SMILES is chemically valid
+3. For simple molecules (H2O, NH3, CO2), use standard SMILES
+4. For organic molecules, use standard organic chemistry SMILES notation
+5. For metal complexes:
+   - If the complex can be reasonably represented in SMILES, provide it
+   - If it's a coordination complex that cannot be properly represented in SMILES (e.g., metal clusters, extended structures), respond with "NOT_REPRESENTABLE_IN_SMILES"
+
+Examples:
+- Water (H2O) → O
+- Ammonia (NH3) → N
+- Benzene (C6H6) → c1ccccc1
+- Pyridine (C5H5N) → c1ccncc1
+- Metal cluster with 10 Ru atoms → NOT_REPRESENTABLE_IN_SMILES
+
+Provide ONLY the SMILES string or "NOT_REPRESENTABLE_IN_SMILES" as your response.
+
+
+--- Iteration 1 ---
+
+================================================================================
+AGENT RESPONSE:
+================================================================================
+NOT_REPRESENTABLE_IN_SMILES
+================================================================================
+
+✗ FAILED TO CONVERT
+  Formula:     Fe(CO)4(N2)
+  Error:       Could not extract SMILES from LLM response
+
+================================================================================
+TEST 8/8: Ru10 (ruthenium metal cluster with 10 atoms)
+================================================================================
+
+================================================================================
+COMPUTATIONAL CHEMISTRY AGENTIC WORKFLOW
+================================================================================
+User Request: Convert the following chemical formula to a valid SMILES string:
+
+Formula: Ru10
+Description: ruthenium metal cluster with 10 atoms
+
+Requirements:
+1. Provide ONLY the SMILES string as your response
+2. Ensure the SMILES is chemically valid
+3. For simple molecules (H2O, NH3, CO2), use standard SMILES
+4. For organic molecules, use standard organic chemistry SMILES notation
+5. For metal complexes:
+   - If the complex can be reasonably represented in SMILES, provide it
+   - If it's a coordination complex that cannot be properly represented in SMILES (e.g., metal clusters, extended structures), respond with "NOT_REPRESENTABLE_IN_SMILES"
+
+Examples:
+- Water (H2O) → O
+- Ammonia (NH3) → N
+- Benzene (C6H6) → c1ccccc1
+- Pyridine (C5H5N) → c1ccncc1
+- Metal cluster with 10 Ru atoms → NOT_REPRESENTABLE_IN_SMILES
+
+Provide ONLY the SMILES string or "NOT_REPRESENTABLE_IN_SMILES" as your response.
+
+
+--- Iteration 1 ---
+
+================================================================================
+AGENT RESPONSE:
+================================================================================
+NOT_REPRESENTABLE_IN_SMILES
+================================================================================
+
+✗ FAILED TO CONVERT
+  Formula:     Ru10
+  Error:       Could not extract SMILES from LLM response
+
+================================================================================
+SUMMARY
+================================================================================
+
+Total tests:        8
+Successful:         6
+Not representable:  2
+Errors:             0
+
+✓ Successfully converted to SMILES:
+  H2O             → O
+  NH3             → N
+  C6H6            → c1ccccc1
+  C2H5OH          → CCO
+  C5H5N           → c1ccncc1
+  C10H8N2         → c1ccncc1c2ccncc2
+
+⚠ Not representable as SMILES (expected for metal complexes):
+  Fe(CO)4(N2)
+  Ru10
+
+================================================================================
+CONVERTER CAPABILITIES DEMONSTRATED:
+================================================================================
+✓ Converts simple molecular formulas to SMILES using LLM reasoning
+✓ Validates SMILES with RDKit (or basic validation)
+✓ Detects when structures cannot be represented as SMILES
+✓ Handles both organic molecules and recognizes metal complexes
+================================================================================

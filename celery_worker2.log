@@ -1,0 +1,73 @@
+ 
+ -------------- worker2@Mac v5.5.3 (immunity)
+--- ***** ----- 
+-- ******* ---- macOS-15.2-arm64-arm-64bit 2025-11-26 08:54:48
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         hpc_worker:0x10575a0d0
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     redis://localhost:6379/0
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . tasks.run_simulation
+  . tasks.submit_slurm_job
+
+[2025-11-26 08:54:48,804: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2025-11-26 08:54:48,806: INFO/MainProcess] mingle: searching for neighbors
+[2025-11-26 08:54:49,829: INFO/MainProcess] mingle: sync with 1 nodes
+[2025-11-26 08:54:49,830: INFO/MainProcess] mingle: sync complete
+[2025-11-26 08:54:49,845: INFO/MainProcess] worker2@Mac ready.
+[2025-11-26 08:54:52,209: INFO/MainProcess] sync with worker3@Mac
+[2025-11-26 08:58:35,726: INFO/MainProcess] Task tasks.run_simulation[00d18f8f-c114-41ce-900e-c8b9a8bd9f1c] received
+[2025-11-26 08:58:35,727: WARNING/ForkPoolWorker-1] [00d18f8f-c114-41ce-900e-c8b9a8bd9f1c] Starting cp2k simulation: Ru10_cluster_energy
+[2025-11-26 08:58:35,975: WARNING/ForkPoolWorker-1] [00d18f8f-c114-41ce-900e-c8b9a8bd9f1c] Using CP2K (version: 2025.1)
+[2025-11-26 08:58:35,980: WARNING/ForkPoolWorker-1] Successfully parsed XYZ structure with 10 atoms
+[2025-11-26 08:58:35,980: WARNING/ForkPoolWorker-1] [00d18f8f-c114-41ce-900e-c8b9a8bd9f1c] Job directory created: /var/folders/wq/5b3hv3c95yxfjn4t76l2jt580000gp/T/backplane_jobs/00d18f8f-c114-41ce-900e-c8b9a8bd9f1c
+[2025-11-26 09:11:53,313: WARNING/ForkPoolWorker-1] [00d18f8f-c114-41ce-900e-c8b9a8bd9f1c] Simulation completed successfully
+[2025-11-26 09:11:53,317: INFO/ForkPoolWorker-1] Task tasks.run_simulation[00d18f8f-c114-41ce-900e-c8b9a8bd9f1c] succeeded in 797.5580318749999s: {'status': 'success', 'execution_time': 797.3248767852783, 'results': {'scf_converged': True, 'scf_iterations': 1}, 'output_files': {'input': '/var/folders/wq/5b3hv3c95yxfjn4t76l2jt580000gp/T/backplane_jobs/00d18f8f-c114-41ce-900e-c8b9a8bd9f1c/cp2k.inp', 'output': '/var/folders/wq/5b3hv3c95yxfjn4t76l2jt580000gp/T/backplane_jobs/00d18f8f-c114-41ce-900e-c8b9a8bd9f1c/cp2k.out', 'log': '/var/folders/wq/5b3hv3c95yxfjn4t76l2jt580000gp/T/backplane_jobs/00d18f8f-c114-41ce-900e-c8b9a8bd9f1c/job.log', 'metadata': '/var/folders/wq/5b3hv3c95yxfjn4t76l2jt580000gp/T/backplane_jobs/00d18f8f-c114-41ce-900e-c8b9a8bd9f1c/job_metadata.json'}, 'job_id': '00d18f8f-c114-41ce-900e-c8b9a8bd9f1c', 'application': 'cp2k', 'experiment_name': 'Ru10_cluster_energy', 'completion_time': '2025-11-26 09:11:53'}
+[2025-11-26 23:13:59,374: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-26 23:13:59,375: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-26 23:15:29,950: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-26 23:15:29,951: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-26 23:18:58,915: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-26 23:18:58,915: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-26 23:25:39,712: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-26 23:25:39,712: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-26 23:32:59,349: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-26 23:32:59,571: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 01:13:48,215: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-27 01:13:48,216: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 01:22:15,079: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-27 01:22:15,153: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 01:31:21,626: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-27 01:31:21,682: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 01:39:01,039: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-27 01:39:01,039: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 01:47:59,941: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-27 01:48:00,182: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 02:04:29,240: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-27 02:04:29,241: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 02:11:56,576: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-27 02:11:56,576: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 03:30:08,635: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-27 03:30:08,635: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 04:37:29,650: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 04:37:29,712: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-27 04:46:26,302: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-27 04:46:26,499: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 04:55:24,866: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-27 04:55:24,866: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 05:03:17,946: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 05:03:18,177: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-27 05:06:41,184: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 05:08:41,195: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-27 05:14:57,359: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 05:25:28,230: INFO/MainProcess] missed heartbeat from worker1@Mac
+[2025-11-27 05:25:28,319: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 05:42:30,180: INFO/MainProcess] missed heartbeat from worker3@Mac

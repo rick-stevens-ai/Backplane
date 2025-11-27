@@ -1,0 +1,29 @@
+&control
+    calculation='scf',
+    prefix='ch4',
+    pseudo_dir='/Users/stevens/Dropbox/Backplane/APPS/q-e/pseudo',
+    outdir='/Users/stevens/Dropbox/Backplane/APPS/test_runs/methane/quantum_espresso/tmp',
+    tprnfor=.false.,
+    tstress=.false.,
+/
+&system
+    ibrav=1, celldm(1)=20.0, nat=5, ntyp=2,
+    ecutwfc=50.0,
+    occupations='smearing', smearing='gaussian', degauss=0.02,
+    input_dft='PBE'
+/
+&electrons
+    conv_thr=1.0d-7,
+    mixing_beta=0.7,
+    diagonalization='david'
+/
+ATOMIC_SPECIES
+ C 12.011 C.UPF
+ H 1.008 H_US.van
+ATOMIC_POSITIONS (angstrom)
+ C 0.000 0.000 0.000
+ H 0.629 0.629 0.629
+ H -0.629 -0.629 0.629
+ H -0.629 0.629 -0.629
+ H 0.629 -0.629 -0.629
+K_POINTS gamma

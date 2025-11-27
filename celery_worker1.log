@@ -1,0 +1,55 @@
+ 
+ -------------- worker1@Mac v5.5.3 (immunity)
+--- ***** ----- 
+-- ******* ---- macOS-15.2-arm64-arm-64bit 2025-11-26 08:54:45
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         hpc_worker:0x107e8cc40
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     redis://localhost:6379/0
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . tasks.run_simulation
+  . tasks.submit_slurm_job
+
+[2025-11-26 08:54:45,225: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2025-11-26 08:54:45,228: INFO/MainProcess] mingle: searching for neighbors
+[2025-11-26 08:54:46,234: INFO/MainProcess] mingle: all alone
+[2025-11-26 08:54:46,246: INFO/MainProcess] worker1@Mac ready.
+[2025-11-26 08:54:48,826: INFO/MainProcess] sync with worker2@Mac
+[2025-11-26 08:54:52,209: INFO/MainProcess] sync with worker3@Mac
+[2025-11-26 23:19:00,013: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 01:16:47,764: INFO/MainProcess] missed heartbeat from worker2@Mac
+[2025-11-27 01:16:47,986: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 01:22:16,104: INFO/MainProcess] missed heartbeat from worker2@Mac
+[2025-11-27 01:22:16,104: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 01:31:22,572: INFO/MainProcess] missed heartbeat from worker2@Mac
+[2025-11-27 01:31:22,572: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 01:44:36,448: INFO/MainProcess] missed heartbeat from worker2@Mac
+[2025-11-27 01:44:36,691: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 01:48:01,140: INFO/MainProcess] missed heartbeat from worker2@Mac
+[2025-11-27 01:48:01,140: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 02:11:57,506: INFO/MainProcess] missed heartbeat from worker2@Mac
+[2025-11-27 02:11:57,507: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 03:19:52,067: INFO/MainProcess] missed heartbeat from worker2@Mac
+[2025-11-27 03:19:52,068: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 03:32:21,705: INFO/MainProcess] missed heartbeat from worker2@Mac
+[2025-11-27 03:32:21,705: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 04:37:30,577: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 04:37:30,578: INFO/MainProcess] missed heartbeat from worker2@Mac
+[2025-11-27 04:50:27,882: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 04:55:25,555: INFO/MainProcess] missed heartbeat from worker2@Mac
+[2025-11-27 04:55:25,555: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 05:03:18,564: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 05:06:41,576: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 05:14:57,752: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 05:25:28,625: INFO/MainProcess] missed heartbeat from worker2@Mac
+[2025-11-27 05:25:28,625: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 05:36:54,044: INFO/MainProcess] missed heartbeat from worker3@Mac
+[2025-11-27 05:36:54,280: INFO/MainProcess] missed heartbeat from worker2@Mac

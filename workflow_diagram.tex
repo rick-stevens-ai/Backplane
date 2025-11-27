@@ -1,0 +1,241 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, fit, backgrounds, calc, shapes.multipart}
+
+% Define colors
+\definecolor{stepcolor1}{RGB}{76, 175, 80}      % Green
+\definecolor{stepcolor2}{RGB}{33, 150, 243}     % Blue
+\definecolor{stepcolor3}{RGB}{255, 152, 0}      % Orange
+\definecolor{stepcolor4}{RGB}{156, 39, 176}     % Purple
+\definecolor{stepcolor5}{RGB}{0, 150, 136}      % Teal
+\definecolor{decisioncolor}{RGB}{255, 193, 7}   % Amber
+
+\tikzset{
+    step/.style={
+        rectangle,
+        rounded corners,
+        minimum width=4.5cm,
+        minimum height=1.2cm,
+        text centered,
+        draw=black,
+        line width=1pt,
+        font=\sffamily\small,
+        text width=4cm,
+        align=center
+    },
+    decision/.style={
+        diamond,
+        aspect=2,
+        minimum width=3cm,
+        minimum height=1cm,
+        text centered,
+        draw=black,
+        line width=1pt,
+        font=\sffamily\small,
+        fill=decisioncolor!30,
+        text width=2.5cm,
+        align=center
+    },
+    process/.style={
+        rectangle,
+        minimum width=5cm,
+        minimum height=1cm,
+        text centered,
+        draw=black,
+        line width=0.8pt,
+        font=\sffamily\scriptsize,
+        text width=4.5cm,
+        align=left,
+        fill=white
+    },
+    arrow/.style={
+        -Stealth,
+        line width=1.5pt,
+        draw=black!80
+    },
+    label/.style={
+        font=\sffamily\bfseries\footnotesize,
+        text=black!70
+    },
+    time/.style={
+        font=\sffamily\scriptsize\itshape,
+        text=blue!70
+    }
+}
+
+\begin{document}
+
+\begin{tikzpicture}[node distance=1.3cm]
+
+    % Title
+    \node[font=\sffamily\bfseries\Large] at (0, 11) {Agentic Workflow Execution Flow};
+
+    % Step 1: User Request
+    \node[step, fill=stepcolor1!20] (step1) at (0, 9.2) {
+        \textbf{1. User Request}\\
+        Natural language input
+    };
+    \node[process, below=0.2cm of step1] (step1_detail) {
+        Example: "Run DFT calculation\\
+        on ethanol (CCO) for catalyst design"
+    };
+
+    % Step 2: Agent Parsing
+    \node[step, fill=stepcolor2!20, below=1.8cm of step1_detail] (step2) {
+        \textbf{2. LLM Agent Parsing}\\
+        Function calling decision
+    };
+    \node[process, below=0.2cm of step2] (step2_detail) {
+        • Parse molecule (CCO = ethanol)\\
+        • Identify task (DFT electronic structure)\\
+        • Select tool (run\_gpaw or run\_cp2k)\\
+        • Set parameters (PBE functional, etc.)
+    };
+    \node[time, right=0.2cm of step2.east, anchor=west] {2-5s};
+
+    % Decision: Which Application?
+    \node[decision, below=1.8cm of step2_detail] (decision) {
+        Select\\
+        Application
+    };
+
+    % Step 3: Job Submission
+    \node[step, fill=stepcolor3!20, below=1.5cm of decision] (step3) {
+        \textbf{3. FastAPI Job Submission}\\
+        Immediate job\_id return
+    };
+    \node[process, below=0.2cm of step3] (step3_detail) {
+        POST /submit\_app\_job\\
+        \{application: "gpaw", params: ...\}\\
+        → Returns: \{job\_id: "abc-123", status: "QUEUED"\}
+    };
+    \node[time, right=0.2cm of step3.east, anchor=west] {$<$100ms};
+
+    % Step 4: Celery Processing
+    \node[step, fill=stepcolor4!20, below=1.8cm of step3_detail] (step4) {
+        \textbf{4. Celery Async Execution}\\
+        Worker processes job
+    };
+    \node[process, below=0.2cm of step4] (step4_detail) {
+        • Wrapper generates input files\\
+        • Executes application (GPAW/CP2K/etc.)\\
+        • Monitors progress\\
+        • Parses output files\\
+        • Extracts scientific results
+    };
+    \node[time, right=0.2cm of step4.east, anchor=west] {10s-30min};
+
+    % Step 5: Agent Polling
+    \node[step, fill=stepcolor5!20, below=1.8cm of step4_detail] (step5) {
+        \textbf{5. Agent Status Polling}\\
+        check\_simulation\_status()
+    };
+    \node[process, below=0.2cm of step5] (step5_detail) {
+        Loop every 2 seconds:\\
+        GET /job\_status/\{job\_id\}\\
+        Until status == "SUCCESS"
+    };
+
+    % Decision: Job Complete?
+    \node[decision, below=1.5cm of step5_detail] (decision2) {
+        Job\\
+        Complete?
+    };
+
+    % Step 6: Result Interpretation
+    \node[step, fill=stepcolor1!20, below=1.5cm of decision2] (step6) {
+        \textbf{6. Agent Result Interpretation}\\
+        Scientific analysis
+    };
+    \node[process, below=0.2cm of step6] (step6_detail) {
+        • Energy: -0.537 Ha (-14.61 eV)\\
+        • Convergence: Achieved\\
+        • HOMO-LUMO gap: 4.82 eV\\
+        • Professional report generation
+    };
+    \node[time, right=0.2cm of step6.east, anchor=west] {2-5s};
+
+    % Step 7: User Response
+    \node[step, fill=stepcolor2!20, below=1.8cm of step6_detail] (step7) {
+        \textbf{7. Human-Readable Response}\\
+        Formatted scientific summary
+    };
+
+    % Arrows
+    \draw[arrow] (step1_detail) -- (step2);
+    \draw[arrow] (step2_detail) -- (decision);
+    \draw[arrow] (decision) -- node[label, right] {Chosen} (step3);
+    \draw[arrow] (step3_detail) -- (step4);
+    \draw[arrow] (step4_detail) -- (step5);
+    \draw[arrow] (step5_detail) -- (decision2);
+
+    % Loop back arrow
+    \draw[arrow, dashed] (decision2.west) -- ++(-2,0)
+        node[label, above, pos=0.5] {No: Continue polling}
+        |- (step5.west);
+
+    \draw[arrow] (decision2) -- node[label, right] {Yes} (step6);
+    \draw[arrow] (step6_detail) -- (step7);
+
+    % Application options (branching from decision)
+    \node[process, fill=blue!10, left=2cm of decision, text width=2cm,
+          minimum width=2.3cm, font=\sffamily\tiny] (app_list) {
+        \textbf{Options:}\\
+        • Quantum ESPRESSO\\
+        • CP2K\\
+        • GPAW\\
+        • LAMMPS\\
+        • GROMACS
+    };
+    \draw[arrow, dashed, line width=1pt] (app_list) -- (decision);
+
+    % Key Benefits Box
+    \node[process, fill=green!10, draw=green!60, line width=1pt,
+          right=1.8cm of step4, anchor=west, text width=3cm, minimum width=3.2cm,
+          font=\sffamily\tiny] (benefits) {
+        \textbf{KEY BENEFITS:}\\[0.1cm]
+        \textbullet\ No LLM timeout\\
+        (Step 3 returns immediately)\\[0.1cm]
+        \textbullet\ Async processing\\
+        (Step 4 runs independently)\\[0.1cm]
+        \textbullet\ Progress monitoring\\
+        (Step 5 polls status)\\[0.1cm]
+        \textbullet\ Autonomous execution\\
+        (No human intervention)
+    };
+
+    % Total Time Box
+    \node[process, fill=yellow!15, draw=orange!60, line width=1pt,
+          below=0.5cm of benefits, text width=3cm, minimum width=3.2cm,
+          font=\sffamily\tiny, align=center] {
+        \textbf{TYPICAL TOTAL TIME}\\[0.1cm]
+        DFT: 30s - 5 min\\
+        Classical MD: 10s - 2 min\\[0.1cm]
+        Agent overhead: $<$10s\\
+        Simulation: 10s - 30 min
+    };
+
+    % Success Metrics Box
+    \node[process, fill=blue!10, draw=blue!60, line width=1pt,
+          left=1.8cm of step5, anchor=east, text width=3cm, minimum width=3.2cm,
+          font=\sffamily\tiny] (metrics) {
+        \textbf{TESTED METRICS:}\\[0.1cm]
+        \textbullet\ 100\% success rate\\
+        \textbullet\ 5/5 applications working\\
+        \textbullet\ 3 LLM models tested\\
+        \textbullet\ gpt-oss:120b: Outstanding\\[0.1cm]
+        \textbf{Test molecule:}\\
+        Caffeine (C8H10N4O2)\\
+        24 atoms
+    };
+
+    % Timeline arrow on right side
+    \draw[-Stealth, line width=2pt, draw=gray!50]
+        ($(step1.east) + (7.5, 0.5)$) --
+        ($(step7.east) + (7.5, -0.5)$)
+        node[midway, right, font=\sffamily\footnotesize, text=gray!70, align=center]
+        {Time\\Flow};
+
+\end{tikzpicture}
+
+\end{document}

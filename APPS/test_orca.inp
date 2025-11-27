@@ -1,0 +1,8 @@
+# Simple ORCA test - Water molecule single point
+! B3LYP def2-SVP
+
+* xyz 0 1
+O   0.0000   0.0000   0.0000
+H   0.7572   0.5865   0.0000
+H  -0.7572   0.5865   0.0000
+*

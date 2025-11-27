@@ -1,0 +1,76 @@
+==> Auto-updating Homebrew...
+Adjust how often this is run with `$HOMEBREW_AUTO_UPDATE_SECS` or disable with
+`$HOMEBREW_NO_AUTO_UPDATE=1`. Hide these hints with `$HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Auto-updated Homebrew!
+Updated 2 taps (homebrew/core and homebrew/cask).
+==> New Formulae
+aws-spiffe-workload-helper: Helper for providing AWS credentials to workloads using their SPIFFE identity
+e1s: TUI for managing AWS ECS, inspired by k9s
+fastrace: Dependency-free traceroute implementation in pure C
+git-xet: Git LFS plugin that uploads and downloads using the Xet protocol
+gitlogue: Cinematic Git commit replay tool
+mail-deduplicate: CLI to deduplicate mails from mail boxes
+qqqa: Fast, stateless LLM for your shell: qq answers; qa runs commands
+strands-agents-sops: Standard Operating Procedures for AI agents using natural language
+thorvg: Lightweight portable library used for drawing vector-based scenes and animations
+xleak: Terminal Excel viewer with an interactive TUI
+==> New Casks
+aks-desktop: Azure Kubernetes Service desktop application
+appbox: iOS app distribution tool
+athas: Lightweight code editor
+font-amarna
+font-geom
+font-gveret-levin
+font-line-seed-jp
+font-sekuya
+fontra-pak: Browser-based font editor
+locu: Daily planner and focus timer
+mountmate: Menubar app to easily manage external drives
+mozregression-gui: Interactive regression range finder for Firefox and other Mozilla products
+rocketman-choices-packager: Utility for customising installer package choices
+zo: Friendly personal server
+
+You have 48 outdated formulae and 2 outdated casks installed.
+
+==> Fetching downloads for: nwchem
+✔︎ Bottle Manifest nwchem (7.3.1)
+✔︎ Bottle Manifest pkgconf (2.5.1)
+✔︎ Bottle Manifest sqlite (3.51.0)
+✔︎ Bottle Manifest python@3.14 (3.14.0_1)
+✔︎ Bottle pkgconf (2.5.1)
+✔︎ Bottle sqlite (3.51.0)
+✔︎ Bottle python@3.14 (3.14.0_1)
+✔︎ Bottle nwchem (7.3.1)
+==> Installing dependencies for nwchem: pkgconf, sqlite and python@3.14
+==> Installing nwchem dependency: pkgconf
+==> Pouring pkgconf--2.5.1.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/pkgconf/2.5.1: 28 files, 533.5KB
+==> Installing nwchem dependency: sqlite
+==> Pouring sqlite--3.51.0.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/sqlite/3.51.0: 13 files, 5.2MB
+==> Installing nwchem dependency: python@3.14
+==> Pouring python@3.14--3.14.0_1.arm64_sequoia.bottle.tar.gz
+Warning: These files were overwritten during the `brew link` step:
+/opt/homebrew/bin/idle3
+/opt/homebrew/bin/pip3
+/opt/homebrew/bin/pydoc3
+/opt/homebrew/bin/python3
+/opt/homebrew/bin/python3-config
+/opt/homebrew/bin/wheel3
+/opt/homebrew/share/man/man1/python3.1
+/opt/homebrew/lib/pkgconfig/python3-embed.pc
+/opt/homebrew/lib/pkgconfig/python3.pc
+/opt/homebrew/Frameworks/Python.framework/Headers
+/opt/homebrew/Frameworks/Python.framework/Python
+/opt/homebrew/Frameworks/Python.framework/Resources
+/opt/homebrew/Frameworks/Python.framework/Versions/Current
+
+They have been backed up to: /Users/stevens/Library/Caches/Homebrew/Backup
+==> Summary
+🍺  /opt/homebrew/Cellar/python@3.14/3.14.0_1: 3,759 files, 73.0MB
+==> Installing nwchem
+==> Pouring nwchem--7.3.1.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/nwchem/7.3.1: 4,756 files, 997.9MB
+==> Running `brew cleanup nwchem`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).

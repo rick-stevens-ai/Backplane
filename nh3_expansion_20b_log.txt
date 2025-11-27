@@ -1,0 +1,47 @@
+================================================================================
+NH3 CATALYST EXPANSION - ITERATIVE APPROACH
+================================================================================
+Starting with 7 candidates
+Target: 100 total candidates
+================================================================================
+
+================================================================================
+BATCH 1: Requesting 15 new candidates
+================================================================================
+
+
+================================================================================
+COMPUTATIONAL CHEMISTRY AGENTIC WORKFLOW
+================================================================================
+User Request: Based on the following NH3 formation catalyst candidates we've already identified:
+
+  1. Pyridine (c1ccncc1) - N-heterocycle ligand, Lewis base
+  2. Imidazole (c1cnc[nH]1) - Enzyme-inspired, proton shuttle
+  3. 2,2'-Bipyridine (c1ccnc(c1)c2ccccn2) - Bidentate chelator
+  4. Ammonia (N) - Product molecule
+  5. Hydrazine (NN) - N-N bond intermediate
+  6. Pyrazole (c1c[nH]nc1) - Imidazole isomer
+  7. 1,2,4-Triazole (c1ncn[nH]1) - Three N atoms for N2 activation
+
+Using chemical reasoning, suggest 15 NEW molecules that would be promising for NH3 formation catalysis. Consider:
+
+1. **Nitrogen-containing ligands** that could coordinate to metal centers (Ru, Fe, Mo, Re)
+2. **Proton shuttles** and bases that facilitate H+ transfer
+3. **Molecules with multiple coordination sites** for binding N2, H2, or intermediates 
+4. **Systematic variations** of molecules above (substituted pyridines, different heterocycles)
+5. **Biomimetic structures** inspired by nitrogenase (FeMo-cofactor has imidazole from histidine)
+
+For each molecule provide:
+- SMILES notation (verify it's valid!)
+- Name
+- Brief rationale (1-2 sentences explaining why it's good for NH3 catalysis)
+
+Format as:
+1. SMILES | Name | Rationale
+2. SMILES | Name | Rationale
+...
+
+Focus on diversity and chemical logic. Avoid duplicating molecules already listed above.
+
+
+--- Iteration 1 ---

@@ -26,20 +26,47 @@ An asynchronous job submission system for HPC/supercomputer workloads, designed 
 - Immediate job submission with unique job IDs
 - Asynchronous processing of long-running simulations
 - Progress tracking and status polling
-- Support for DFT, MD, and docking simulations
+- Support for 10+ simulation codes (DFT, MD, ML)
 - SLURM/HPC scheduler integration ready
 - **Agentic AI workflows** - Autonomous agents that submit and monitor jobs
 - **Detailed scientific results** - Energy levels, convergence, molecular properties
 - **OpenAI-compatible** - Works with any OpenAI API-compatible model (Ollama, etc.)
+- **Multiple input formats** - SMILES, XYZ, CIF for diverse chemical systems
+- **Machine Learning** - MACE force field for fast pre-screening
+
+## Supported Simulation Codes
+
+### Quantum Chemistry (DFT/Wavefunction)
+- **Quantum ESPRESSO** - Plane-wave DFT for periodic systems
+- **CP2K** - Mixed Gaussian/plane-wave DFT and MD
+- **GPAW** - Real-space DFT for molecules and surfaces
+- **ORCA 6.0** - Molecular DFT and multireference methods ✨ NEW
+- **NWChem 7.3** - Parallel quantum chemistry ✨ NEW
+- **PySCF** - Python-based quantum chemistry with CASSCF/NEVPT2 ✨ NEW
+
+### Classical Molecular Dynamics
+- **LAMMPS** - Large-scale MD simulations
+- **GROMACS** - Biomolecular MD
+
+### Machine Learning
+- **MACE** - ML force field for fast energy predictions ✨ NEW
+
+### Workflow Automation
+- **ASE** - Atomic Simulation Environment for NEB, optimization ✨ NEW
 
 ## Installation
 
-```bash
-# Install core dependencies
-pip install fastapi uvicorn celery redis pydantic
+**For complete installation instructions including all simulation codes, see [INSTALLATION.md](INSTALLATION.md)**
 
-# Install agent dependencies (for agentic workflows)
-pip install pyyaml openai
+### Quick Start - Core Dependencies
+
+```bash
+# Clone repository
+git clone https://github.com/YOUR_USERNAME/backplane.git
+cd backplane
+
+# Install Python dependencies
+pip install -r requirements.txt
 
 # Install and start Redis (macOS)
 brew install redis
@@ -48,6 +75,14 @@ brew services start redis
 # Or run Redis via Docker
 docker run -d -p 6379:6379 redis
 ```
+
+### Simulation Codes
+
+See [INSTALLATION.md](INSTALLATION.md) for detailed instructions on installing:
+- Quantum chemistry codes (ORCA, NWChem, PySCF, Quantum ESPRESSO, CP2K, GPAW)
+- Classical MD codes (LAMMPS, GROMACS)
+- Machine learning models (MACE)
+- Workflow tools (ASE)
 
 ## Quick Start
 
