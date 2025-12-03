@@ -44,13 +44,23 @@ Nitrogen dioxide is a bent radical molecule with one unpaired electron. It is a 
 air pollutant formed from combustion processes and is a key component of photochemical
 smog. The molecule has resonance structures with delocalized bonding.
 
-Please use DFT to compute:
-- Total energy
+WORKFLOW REQUIREMENTS:
+1. First, run MACE ML prediction for rapid baseline assessment
+2. Then, run DFT calculation(s) for high-accuracy validation
+3. Finally, compare and contrast the MACE and DFT results
+
+Please compute:
+- Total energy (MACE baseline + DFT validation)
 - Optimized geometry (bent structure)
 - Electronic structure properties
 - N-O bond lengths and O-N-O bond angle
 - Spin state and magnetic properties
 - Molecular orbital structure showing π-system delocalization
+
+At the end, provide a detailed comparison of:
+- MACE vs DFT energy predictions
+- Geometry differences
+- Speed vs accuracy trade-offs
 
 This molecule is important for understanding:
 - Atmospheric chemistry and air pollution

@@ -523,12 +523,46 @@ class ComputationalChemistryAgent:
 
 **IMPORTANT - Molecular Input Formats**:
 - **SMILES strings**: Use for organic molecules (H, C, N, O, P, S, halogens)
-  - Example: "CCO" for ethanol, "N" for ammonia
+  - Example: "CCO" for ethanol, "N" for ammonia, "[N]=O" for radicals
 - **XYZ coordinates**: Use for metal clusters, materials, surfaces, coordination complexes, or any system that cannot be represented as SMILES
   - Format: <n_atoms>\\n<comment>\\n<element> <x> <y> <z>\\n...
   - Example: Ru10 cluster, Fe3O4, Pt surfaces, FeMo-cofactor
   - CP2K and GPAW support XYZ input via the `xyz_structure` parameter
   - When user provides XYZ coordinates in their request, extract them and pass via `xyz_structure` parameter
+
+**🚨 MANDATORY MACE-FIRST WORKFLOW 🚨**
+
+**YOU MUST ALWAYS RUN MACE BEFORE DFT CALCULATIONS!**
+
+For EVERY molecular calculation request (unless user explicitly says "skip MACE" or "DFT only"):
+
+1. **FIRST**: Run MACE ML prediction (mace_predict_energy or mace_optimize_geometry)
+   - Get rapid ML baseline (~0.3-2s)
+   - Understand molecular structure and energy scale
+
+2. **SECOND**: Run DFT calculation(s) for high-accuracy validation
+   - When multiple DFT codes are viable, try TWO different codes (e.g., GPAW + CP2K)
+   - This allows comparison of different DFT implementations
+
+3. **THIRD**: Provide comprehensive comparison and analysis
+   - Compare MACE vs DFT results (energy, geometry, properties)
+   - Highlight agreements and discrepancies
+   - Discuss accuracy trade-offs (MACE speed vs DFT precision)
+   - If you ran multiple DFT codes, compare them as well
+
+**Example MACE-First Workflow**:
+"The user requested energy and geometry calculations for a radical molecule.
+
+WORKFLOW PLAN:
+1. MACE ML prediction (~0.3s) - Get rapid baseline energy and optimized structure
+2. GPAW DFT calculation (~2 min) - High-accuracy quantum calculation with real-space grid
+3. CP2K DFT calculation (~3 min) - Alternative DFT implementation for comparison
+4. Final comparison and analysis of all three results
+
+This approach gives us:
+- Fast screening (MACE) to verify feasibility
+- Accurate energetics from two independent DFT codes
+- Cross-validation between methods to assess reliability"
 
 **CRITICAL REQUIREMENT: YOU MUST THINK OUT LOUD AND EXPLAIN YOUR REASONING**
 
@@ -541,13 +575,13 @@ Before calling any tools, you MUST provide a clear explanation of your computati
 
 2. **Deliberate on Tool Selection**:
    - What tools are available for this task?
-   - Which tool is most appropriate and why?
+   - Start with MACE for rapid assessment (mandatory!)
+   - Which DFT code(s) for validation? Try two if both are suitable.
    - What are the trade-offs (speed vs. accuracy)?
-   - Should I use MACE for rapid screening first, or go directly to DFT?
 
 3. **Explain Computational Order**:
    - What sequence of calculations is needed?
-   - Why this order? (e.g., "First MACE screening to narrow candidates, then DFT validation of top 3")
+   - Why this order? (MACE → DFT1 → DFT2 → Compare)
    - What will each step accomplish?
 
 4. **Justify Parameter Choices**:
@@ -562,6 +596,7 @@ ANALYSIS: This is a screening task with many molecules, so computational efficie
 STRATEGY: I should use a two-stage approach:
 1. MACE rapid screening (all 20 molecules, ~10s total) to identify promising candidates
 2. DFT validation (top 3 candidates, ~3 min each) for accurate energetics
+3. Final comparison showing MACE predictions vs DFT results
 
 RATIONALE:
 - MACE can quickly filter out poor candidates (saves ~85 min vs. DFT for all 20)
@@ -570,22 +605,25 @@ RATIONALE:
 
 ORDER OF EXECUTION:
 1. Call mace_rapid_screening with all 20 SMILES
-2. Analyze results, select top 3
-3. Submit CP2K jobs for detailed analysis of top candidates
+2. Analyze results, select top 3 based on MACE predictions
+3. Submit CP2K jobs for detailed DFT analysis of top candidates
 4. Monitor with check_simulation_status
-5. Compare and recommend best catalyst"
+5. Compare MACE vs DFT energies and recommend best catalyst with comparison table"
 
 Guidelines for choosing applications:
-- Use **MACE** for rapid screening, pre-filtering, or quick feasibility checks
+- Use **MACE FIRST** for ALL calculations (mandatory baseline)
 - Use **CP2K** for metal clusters, coordination complexes, QM/MM, or systems requiring mixed basis sets
 - Use **GPAW** for rapid DFT calculations, Python integration, or real-space grid methods
 - Use **QE** for plane-wave DFT, periodic systems, and electronic structure
 - Use **LAMMPS** for large systems, classical MD, or reactive force fields (ReaxFF)
 - Use **GROMACS** for biomolecular systems, enzymes, or solvated reactions
+- When 2+ DFT codes are suitable, **RUN TWO** for comparison and validation
 
-**Optimal Workflow for Screening**: MACE rapid screening → DFT validation of top candidates (10-100x speedup!)
+**Standard Workflow**: MACE → DFT → Comparison Analysis
 
-**Metal Catalyst Workflow**: MACE-MP screening of metal structures → CP2K/GPAW DFT validation with XYZ coordinates
+**Multi-Code Workflow**: MACE → DFT1 → DFT2 → Three-way Comparison
+
+**Screening Workflow**: MACE rapid screening → DFT validation of top candidates → Comparison table
 
 **RESPONSE FORMAT - MANDATORY**:
 Your response MUST follow this format:
@@ -596,12 +634,31 @@ Your response MUST follow this format:
 <tool_call>run_gpaw(...)</tool_call>
 
 ✅ **CORRECT** - Explanation followed by tool call:
-"Let me analyze this water molecule calculation request...
-[200+ words of analysis, reasoning, and strategy]
-Now I'll proceed with the calculation."
-<tool_call>run_gpaw(...)</tool_call>
+"Let me analyze this molecular calculation request. The user has provided a molecule with specific properties that need to be calculated.
 
-**If you skip the explanatory text, your response will be considered invalid!**"""
+ANALYSIS: [Analyze the molecule, its properties, what needs to be calculated]
+
+STRATEGY: Following the mandatory MACE-first workflow:
+1. First, I'll run MACE ML prediction to get a rapid baseline
+2. Then, I'll use GPAW for DFT validation with accurate quantum calculations
+3. Finally, I'll compare the MACE and DFT results
+
+[More detailed reasoning about parameters, expected outcomes, etc.]
+
+Now I'll proceed with the MACE calculation first."
+<tool_call>mace_predict_energy(...)</tool_call>
+
+**If you skip the explanatory text, your response will be considered invalid!**
+
+**FINAL ANALYSIS REQUIREMENT**:
+At the end of your workflow, you MUST provide a well-formatted comparison section that:
+- Presents MACE vs DFT results side-by-side
+- Discusses agreements and differences
+- Explains the speed vs accuracy trade-off
+- Makes clear recommendations based on the comparison
+- If multiple DFT codes were used, compares all methods
+
+Format this analysis to be easy for humans to read with clear sections, bullet points, and tables where appropriate."""
             },
             {
                 "role": "user",
@@ -670,23 +727,107 @@ Now I'll proceed with the calculation."
             elif hasattr(response.choices[0], 'reasoning'):
                 reasoning_content = response.choices[0].reasoning
 
-            # Display reasoning steps if available
+            # Display reasoning steps if available with improved formatting
             if reasoning_content:
-                logger.info("=== MODEL REASONING / THINKING ===")
-                logger.info("[INTERNAL REASONING]:")
-                for line in str(reasoning_content).split('\n'):
-                    if line.strip():
-                        logger.info(f"  💭 {line}")
-                logger.info("=== END REASONING ===")
+                logger.info("")
+                logger.info("╔" + "═"*78 + "╗")
+                logger.info("║" + " "*25 + "💭 MODEL REASONING / THINKING" + " "*24 + "║")
+                logger.info("╚" + "═"*78 + "╝")
+                logger.info("")
+
+                # Format reasoning content for better readability
+                reasoning_lines = str(reasoning_content).split('\n')
+                in_section = False
+                section_indent = "  "
+
+                for line in reasoning_lines:
+                    stripped = line.strip()
+                    if not stripped:
+                        logger.info("")
+                        continue
+
+                    # Detect section headers (lines ending with ':' or all caps)
+                    if (stripped.endswith(':') or stripped.isupper()) and len(stripped.split()) <= 5:
+                        logger.info("")
+                        logger.info(f"💭 {stripped}")
+                        logger.info("─" * 80)
+                        in_section = True
+                    elif stripped.startswith('- ') or stripped.startswith('• '):
+                        # Bullet points
+                        logger.info(f"{section_indent}  ✓ {stripped[2:]}")
+                    elif stripped[0].isdigit() and stripped[1:3] in ['. ', ') ']:
+                        # Numbered lists
+                        logger.info(f"{section_indent}  {stripped}")
+                    else:
+                        # Regular text
+                        logger.info(f"{section_indent}{stripped}")
+
+                logger.info("")
+                logger.info("╚" + "═"*78 + "╝")
                 logger.info("")
 
             logger.info("=== LLM RESPONSE ===")
 
-            # Log the response content if present
+            # Log the response content with improved formatting
             if message.content:
-                logger.info("[ASSISTANT TEXT]:")
-                for line in message.content.split('\n'):
-                    logger.info(f"  {line}")
+                logger.info("")
+                logger.info("┌" + "─"*78 + "┐")
+                logger.info("│" + " "*28 + "📝 ASSISTANT ANALYSIS" + " "*30 + "│")
+                logger.info("└" + "─"*78 + "┘")
+                logger.info("")
+
+                # Format assistant text for better readability
+                content_lines = message.content.split('\n')
+                in_code_block = False
+
+                for line in content_lines:
+                    stripped = line.strip()
+
+                    # Detect code blocks
+                    if stripped.startswith('```'):
+                        in_code_block = not in_code_block
+                        logger.info(line)
+                        continue
+
+                    if in_code_block:
+                        logger.info(f"  {line}")
+                        continue
+
+                    # Detect section headers
+                    if stripped.upper() in ['ANALYSIS:', 'STRATEGY:', 'RATIONALE:',
+                                           'ORDER OF EXECUTION:', 'WORKFLOW PLAN:',
+                                           'JUSTIFICATION:', 'NEXT STEPS:', 'RESULTS:',
+                                           'COMPARISON:', 'CONCLUSION:', 'RECOMMENDATIONS:',
+                                           'MACE RESULTS:', 'DFT RESULTS:', 'COMPARISON ANALYSIS:']:
+                        logger.info("")
+                        logger.info(f"{'═'*80}")
+                        logger.info(f"🔹 {stripped}")
+                        logger.info(f"{'═'*80}")
+                    elif stripped.startswith(('ANALYSIS:', 'STRATEGY:', 'RATIONALE:',
+                                              'WORKFLOW:', 'COMPARISON:', 'MACE:', 'DFT:',
+                                              'RESULTS:', 'CONCLUSION:')):
+                        logger.info("")
+                        logger.info(f"▸ {stripped}")
+                        logger.info(f"{'─'*80}")
+                    elif stripped.startswith('- ') or stripped.startswith('• '):
+                        # Bullet points
+                        logger.info(f"  • {stripped[2:]}")
+                    elif len(stripped) > 0 and stripped[0].isdigit() and len(stripped) > 2 and stripped[1:3] in ['. ', ') ']:
+                        # Numbered lists
+                        logger.info(f"  {stripped}")
+                    elif stripped.startswith('|') and '|' in stripped[1:]:
+                        # Table rows
+                        logger.info(f"  {line}")
+                    else:
+                        # Regular text
+                        if stripped:
+                            logger.info(f"  {line}")
+                        else:
+                            logger.info("")
+
+                logger.info("")
+                logger.info("└" + "─"*78 + "┘")
+                logger.info("")
             elif message.tool_calls:
                 # Show which tools are being called instead of generic message
                 tool_names = [tc.function.name for tc in message.tool_calls]

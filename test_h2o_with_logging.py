@@ -39,7 +39,22 @@ def main():
     logger.info("-" * 80)
     request = """Calculate the energy and geometry of a water molecule (H2O).
 SMILES: O
-Use DFT to compute the total energy and optimize the geometry.
+
+WORKFLOW REQUIREMENTS:
+1. First, run MACE ML prediction for rapid baseline assessment
+2. Then, run DFT calculation(s) for high-accuracy validation
+3. Finally, compare and contrast the MACE and DFT results
+
+Please compute:
+- Total energy (MACE baseline + DFT validation)
+- Optimized geometry
+- Bond lengths and angles
+
+At the end, provide a detailed comparison of:
+- MACE vs DFT energy predictions
+- Geometry differences
+- Speed vs accuracy trade-offs
+
 This is a simple test molecule."""
 
     logger.info(f"Request: {request}")

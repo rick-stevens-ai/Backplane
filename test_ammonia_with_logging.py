@@ -43,10 +43,20 @@ SMILES: N
 Ammonia is a key nitrogen hydride used in fertilizers and as a chemical building block.
 It has a trigonal pyramidal geometry with the nitrogen atom at the apex.
 
-Please use DFT to compute:
-- Total energy
+WORKFLOW REQUIREMENTS:
+1. First, run MACE ML prediction for rapid baseline assessment
+2. Then, run DFT calculation(s) for high-accuracy validation
+3. Finally, compare and contrast the MACE and DFT results
+
+Please compute:
+- Total energy (MACE baseline + DFT validation)
 - Optimized geometry
 - Electronic structure properties
+
+At the end, provide a detailed comparison of:
+- MACE vs DFT energy predictions
+- Geometry differences
+- Speed vs accuracy trade-offs
 
 This molecule is important for understanding nitrogen chemistry and catalysis."""
 

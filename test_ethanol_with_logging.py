@@ -43,11 +43,21 @@ SMILES: CCO
 Ethanol is a simple alcohol molecule used as a solvent, biofuel, and beverage.
 It contains a two-carbon chain with a hydroxyl (-OH) functional group.
 
-Please use DFT to compute:
-- Total energy
+WORKFLOW REQUIREMENTS:
+1. First, run MACE ML prediction for rapid baseline assessment
+2. Then, run DFT calculation(s) for high-accuracy validation
+3. Finally, compare and contrast the MACE and DFT results
+
+Please compute:
+- Total energy (MACE baseline + DFT validation)
 - Optimized geometry
 - Electronic structure properties
 - Bond lengths and angles
+
+At the end, provide a detailed comparison of:
+- MACE vs DFT energy predictions
+- Geometry differences
+- Speed vs accuracy trade-offs
 
 This molecule is important for understanding organic chemistry and biofuel applications."""
 

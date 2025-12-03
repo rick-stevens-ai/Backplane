@@ -9,10 +9,10 @@ sys.path.insert(0, '/Users/stevens/Dropbox/Backplane')
 from openai import OpenAI
 import json
 
-# Initialize client
+# Initialize client (using the same API key as spark_servers.yaml)
 client = OpenAI(
     base_url="http://100.94.58.120:12000/api/v1",
-    api_key="dummy-key"
+    api_key="sk-aad91216be8b44a194672560b4dde7b4"
 )
 
 print("="*80)

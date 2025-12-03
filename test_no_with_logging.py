@@ -44,12 +44,22 @@ Nitric oxide is a radical molecule with one unpaired electron. It plays crucial
 roles in biological signaling, atmospheric chemistry, and industrial processes.
 The N-O bond has partial multiple bond character.
 
-Please use DFT to compute:
-- Total energy
+WORKFLOW REQUIREMENTS:
+1. First, run MACE ML prediction for rapid baseline assessment
+2. Then, run DFT calculation(s) for high-accuracy validation
+3. Finally, compare and contrast the MACE and DFT results
+
+Please compute:
+- Total energy (MACE baseline + DFT validation)
 - Optimized geometry
 - Electronic structure properties
 - N-O bond length and bond order
 - Spin state and magnetic properties
+
+At the end, provide a detailed comparison of:
+- MACE vs DFT energy predictions
+- Geometry differences
+- Speed vs accuracy trade-offs
 
 This molecule is important for understanding radical chemistry, NO₂ pollution,
 and biological NO signaling pathways."""
