@@ -11,6 +11,81 @@ import requests
 from typing import Dict, Any, Optional, List
 from openai import OpenAI
 from mace_client_simple import MACEClient, smiles_to_xyz
+from backplane_logging import get_logger, log_section, log_subsection, log_dict
+
+# Initialize logger for agent
+logger = get_logger('agent')
+
+
+def format_result_for_display(result: Any, indent: int = 0) -> str:
+    """Format a result (dict, list, or scalar) in a human-friendly way"""
+    prefix = "  " * indent
+
+    if result is None:
+        return f"{prefix}(none)"
+
+    if isinstance(result, dict):
+        lines = []
+        for key, value in result.items():
+            if isinstance(value, (dict, list)):
+                lines.append(f"{prefix}{key}:")
+                lines.append(format_result_for_display(value, indent + 1))
+            elif isinstance(value, str) and len(value) > 100:
+                lines.append(f"{prefix}{key}: {value[:100]}... (truncated)")
+            elif isinstance(value, float):
+                lines.append(f"{prefix}{key}: {value:.6f}")
+            else:
+                lines.append(f"{prefix}{key}: {value}")
+        return "\n".join(lines)
+
+    elif isinstance(result, list):
+        if len(result) == 0:
+            return f"{prefix}(empty list)"
+        elif len(result) > 5:
+            lines = [f"{prefix}[Showing first 5 of {len(result)} items]"]
+            for i, item in enumerate(result[:5]):
+                lines.append(f"{prefix}  [{i}] {item}")
+            return "\n".join(lines)
+        else:
+            lines = []
+            for i, item in enumerate(result):
+                if isinstance(item, dict):
+                    lines.append(f"{prefix}  [{i}]:")
+                    lines.append(format_result_for_display(item, indent + 2))
+                else:
+                    lines.append(f"{prefix}  [{i}] {item}")
+            return "\n".join(lines)
+
+    else:
+        return f"{prefix}{result}"
+
+
+# Tool descriptions for logging
+TOOL_DESCRIPTIONS = {
+    "run_quantum_espresso": "Submit DFT calculation using Quantum ESPRESSO (plane-wave basis set)",
+    "run_cp2k": "Submit DFT/QM-MM calculation using CP2K (mixed Gaussian/plane-wave basis)",
+    "run_gpaw": "Submit DFT calculation using GPAW (real-space grid or plane-wave basis)",
+    "run_lammps": "Submit molecular dynamics simulation using LAMMPS (classical force fields)",
+    "run_gromacs": "Submit molecular dynamics simulation using GROMACS (biomolecular systems)",
+    "check_simulation_status": "Check the status and retrieve results of a submitted simulation job",
+    "mace_predict_energy": "Fast ML energy prediction using MACE foundation model (~0.5s)",
+    "mace_optimize_geometry": "ML-based geometry optimization using MACE foundation model (~2s)",
+    "mace_rapid_screening": "Rapid screening of multiple molecules using MACE ML batch prediction"
+}
+
+
+# Estimated execution times for logging
+TOOL_TIME_ESTIMATES = {
+    "run_quantum_espresso": "30-120 seconds (DFT calculation on HPC)",
+    "run_cp2k": "30-120 seconds (DFT calculation on HPC)",
+    "run_gpaw": "30-120 seconds (DFT calculation on HPC)",
+    "run_lammps": "10-60 seconds (MD simulation, depends on steps)",
+    "run_gromacs": "10-60 seconds (MD simulation, depends on steps)",
+    "check_simulation_status": "~1 second (status query)",
+    "mace_predict_energy": "~0.5 seconds (fast ML prediction)",
+    "mace_optimize_geometry": "~2 seconds (ML optimization)",
+    "mace_rapid_screening": "~0.5-2 seconds (batch ML prediction, depends on number of molecules)"
+}
 
 
 class ComputationalChemistryAgent:
@@ -24,8 +99,17 @@ class ComputationalChemistryAgent:
             server_config_path: Path to the YAML configuration file
             server_name: Name of the server to use from the config
         """
+        logger.info("Initializing Computational Chemistry Agent")
+        logger.info(f"  Server config path: {server_config_path}")
+        logger.info(f"  Server name: {server_name}")
+
         self.api_base = "http://127.0.0.1:8000"  # FastAPI server
+        logger.info(f"  API base URL: {self.api_base}")
+
         self.server_config = self._load_server_config(server_config_path, server_name)
+        logger.info(f"  LLM server: {self.server_config['openai_api_base']}")
+        logger.info(f"  LLM model: {self.server_config['openai_model']}")
+
         self.client = OpenAI(
             api_key=self.server_config["openai_api_key"],
             base_url=self.server_config["openai_api_base"]
@@ -33,15 +117,19 @@ class ComputationalChemistryAgent:
         self.model = self.server_config["openai_model"]
 
         # Initialize MACE client for rapid ML predictions
+        logger.info("  Initializing MACE ML client")
         self.mace_client = MACEClient()
+        logger.info("Agent initialization complete")
 
     def _load_server_config(self, config_path: str, server_name: str) -> Dict[str, str]:
         """Load server configuration from YAML file"""
+        logger.debug(f"Loading server config from {config_path}")
         with open(config_path, 'r') as f:
             config = yaml.safe_load(f)
 
         for server in config['servers']:
             if server['server'] == server_name:
+                logger.debug(f"Found server config for {server_name}")
                 return server
 
         raise ValueError(f"Server {server_name} not found in {config_path}")
@@ -58,6 +146,10 @@ class ComputationalChemistryAgent:
         Returns:
             job_id: Unique identifier for the submitted job
         """
+        logger.info(f"Submitting job to {application}")
+        logger.info(f"  Experiment: {experiment_name}")
+        log_dict(logger, job_params, "  Job parameters")
+
         job_data = {
             "application": application,
             "job_params": job_params,
@@ -65,19 +157,25 @@ class ComputationalChemistryAgent:
         }
 
         # Use the new run_simulation endpoint
+        logger.debug(f"Sending POST request to {self.api_base}/submit_app_job")
         response = requests.post(
             f"{self.api_base}/submit_app_job",
             json=job_data
         )
         response.raise_for_status()
         result = response.json()
-        return result['job_id']
+        job_id = result['job_id']
+        logger.info(f"  Job submitted successfully! Job ID: {job_id}")
+        return job_id
 
     def check_status(self, job_id: str) -> Dict[str, Any]:
         """Check the status of a submitted job"""
+        logger.debug(f"Checking status of job {job_id}")
         response = requests.get(f"{self.api_base}/job_status/{job_id}")
         response.raise_for_status()
-        return response.json()
+        status = response.json()
+        logger.debug(f"  Job {job_id} status: {status.get('status', 'UNKNOWN')}")
+        return status
 
     def run_agentic_workflow(self, user_request: str) -> Dict[str, Any]:
         """
@@ -89,10 +187,10 @@ class ComputationalChemistryAgent:
         Returns:
             Dictionary with simulation results
         """
-        print(f"\n{'='*80}")
-        print(f"COMPUTATIONAL CHEMISTRY AGENTIC WORKFLOW")
-        print(f"{'='*80}")
-        print(f"User Request: {user_request}\n")
+        log_section(logger, "COMPUTATIONAL CHEMISTRY AGENTIC WORKFLOW")
+        logger.info("User Request:")
+        logger.info(f"  {user_request}")
+        logger.info("")
 
         # Define tools for all five applications
         tools = [
@@ -432,14 +530,50 @@ class ComputationalChemistryAgent:
   - CP2K and GPAW support XYZ input via the `xyz_structure` parameter
   - When user provides XYZ coordinates in their request, extract them and pass via `xyz_structure` parameter
 
-When a user requests simulations:
-1. Choose the most appropriate application based on the scientific question
-2. **Determine input format**: If user provides XYZ coordinates or discusses metal clusters/materials, use `xyz_structure`; otherwise use `molecule_smiles`
-3. **For screening many molecules (>10)**: Use MACE first to rank candidates, then validate top candidates with DFT
-4. **For single molecules**: Use MACE for quick estimates, DFT for final accurate results
-5. Set reasonable parameters for the calculation
-6. Monitor DFT jobs with check_simulation_status
-7. Report results with scientific interpretation
+**CRITICAL REQUIREMENT: YOU MUST THINK OUT LOUD AND EXPLAIN YOUR REASONING**
+
+⚠️ **MANDATORY**: You are REQUIRED to provide explanatory text BEFORE every tool call.
+DO NOT call tools without first explaining your reasoning in plain text.
+
+Before calling any tools, you MUST provide a clear explanation of your computational strategy:
+
+1. **Analyze the Problem**: What is the scientific question? What properties need to be calculated?
+
+2. **Deliberate on Tool Selection**:
+   - What tools are available for this task?
+   - Which tool is most appropriate and why?
+   - What are the trade-offs (speed vs. accuracy)?
+   - Should I use MACE for rapid screening first, or go directly to DFT?
+
+3. **Explain Computational Order**:
+   - What sequence of calculations is needed?
+   - Why this order? (e.g., "First MACE screening to narrow candidates, then DFT validation of top 3")
+   - What will each step accomplish?
+
+4. **Justify Parameter Choices**:
+   - Why these specific parameters (functional, cutoff, run_type)?
+   - What assumptions am I making?
+
+**Example of Good Deliberation**:
+"The user wants to screen 20 catalyst candidates for NH3 activation. Let me think about the best approach:
+
+ANALYSIS: This is a screening task with many molecules, so computational efficiency is key.
+
+STRATEGY: I should use a two-stage approach:
+1. MACE rapid screening (all 20 molecules, ~10s total) to identify promising candidates
+2. DFT validation (top 3 candidates, ~3 min each) for accurate energetics
+
+RATIONALE:
+- MACE can quickly filter out poor candidates (saves ~85 min vs. DFT for all 20)
+- CP2K is best for the DFT stage because these are metal-organic complexes
+- I'll use the PBE functional (good balance of accuracy/speed for catalysis)
+
+ORDER OF EXECUTION:
+1. Call mace_rapid_screening with all 20 SMILES
+2. Analyze results, select top 3
+3. Submit CP2K jobs for detailed analysis of top candidates
+4. Monitor with check_simulation_status
+5. Compare and recommend best catalyst"
 
 Guidelines for choosing applications:
 - Use **MACE** for rapid screening, pre-filtering, or quick feasibility checks
@@ -451,7 +585,23 @@ Guidelines for choosing applications:
 
 **Optimal Workflow for Screening**: MACE rapid screening → DFT validation of top candidates (10-100x speedup!)
 
-**Metal Catalyst Workflow**: MACE-MP screening of metal structures → CP2K/GPAW DFT validation with XYZ coordinates"""
+**Metal Catalyst Workflow**: MACE-MP screening of metal structures → CP2K/GPAW DFT validation with XYZ coordinates
+
+**RESPONSE FORMAT - MANDATORY**:
+Your response MUST follow this format:
+1. First provide explanatory text with your analysis and reasoning (200-500 words)
+2. Then make your tool call(s)
+
+❌ **INCORRECT** - Tool call without explanation:
+<tool_call>run_gpaw(...)</tool_call>
+
+✅ **CORRECT** - Explanation followed by tool call:
+"Let me analyze this water molecule calculation request...
+[200+ words of analysis, reasoning, and strategy]
+Now I'll proceed with the calculation."
+<tool_call>run_gpaw(...)</tool_call>
+
+**If you skip the explanatory text, your response will be considered invalid!**"""
             },
             {
                 "role": "user",
@@ -465,73 +615,169 @@ Guidelines for choosing applications:
 
         while iteration < max_iterations:
             iteration += 1
-            print(f"\n--- Iteration {iteration} ---")
+            log_subsection(logger, f"ITERATION {iteration}")
+            logger.info(f"Sending request to LLM ({self.model})")
+            logger.info(f"  Message history length: {len(messages)}")
+
+            # Log the latest user/assistant message for context
+            logger.info("")
+            logger.info("=== PROMPT TO LLM ===")
+            for msg in messages[-3:]:  # Show last 3 messages for context
+                # Handle both dict messages and ChatCompletionMessage objects
+                if isinstance(msg, dict):
+                    role = msg.get('role', 'unknown')
+                    content = msg.get('content', '')
+                else:
+                    # ChatCompletionMessage object
+                    role = getattr(msg, 'role', 'unknown')
+                    content = getattr(msg, 'content', '') or ''
+
+                if content:
+                    logger.info(f"[{role.upper()}]:")
+                    for line in content.split('\n'):
+                        if line.strip():
+                            logger.info(f"  {line}")
+                if hasattr(msg, 'tool_calls') and msg.tool_calls:
+                    logger.info(f"[{role.upper()}]: <tool calls - see below>")
+            logger.info("=== END PROMPT ===")
+            logger.info("")
 
             # Get agent's response
+            llm_start = time.time()
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=messages,
                 tools=tools,
                 tool_choice="auto"
             )
+            llm_elapsed = time.time() - llm_start
 
             message = response.choices[0].message
             messages.append(message)
 
+            logger.info(f"LLM response received in {llm_elapsed:.2f}s")
+            logger.info("")
+
+            # Check for reasoning/thinking content (for reasoning models like oss120b)
+            reasoning_content = None
+            if hasattr(message, 'reasoning'):
+                reasoning_content = message.reasoning
+            elif hasattr(message, 'thinking'):
+                reasoning_content = message.thinking
+            elif hasattr(message, 'reasoning_content'):
+                reasoning_content = message.reasoning_content
+            # Also check in the raw response object
+            elif hasattr(response.choices[0], 'reasoning'):
+                reasoning_content = response.choices[0].reasoning
+
+            # Display reasoning steps if available
+            if reasoning_content:
+                logger.info("=== MODEL REASONING / THINKING ===")
+                logger.info("[INTERNAL REASONING]:")
+                for line in str(reasoning_content).split('\n'):
+                    if line.strip():
+                        logger.info(f"  💭 {line}")
+                logger.info("=== END REASONING ===")
+                logger.info("")
+
+            logger.info("=== LLM RESPONSE ===")
+
+            # Log the response content if present
+            if message.content:
+                logger.info("[ASSISTANT TEXT]:")
+                for line in message.content.split('\n'):
+                    logger.info(f"  {line}")
+            elif message.tool_calls:
+                # Show which tools are being called instead of generic message
+                tool_names = [tc.function.name for tc in message.tool_calls]
+                logger.warning("⚠️  LLM DID NOT PROVIDE EXPLANATORY TEXT")
+                logger.warning("   The LLM is supposed to explain its reasoning before calling tools!")
+                logger.warning("   This violates the deliberation requirements in the system prompt.")
+                logger.info(f"[ASSISTANT]: Proceeding directly to tool execution (no explanation provided)")
+                logger.info(f"  Tools to call: {', '.join(tool_names)}")
+            else:
+                logger.info("[ASSISTANT]: <empty response>")
+
+            logger.info("=== END RESPONSE ===")
+            logger.info("")
+
             # Check if agent wants to use tools
             if message.tool_calls:
-                print(f"Agent is calling {len(message.tool_calls)} tool(s)...")
+                logger.info(f"Agent is calling {len(message.tool_calls)} tool(s)")
 
                 for tool_call in message.tool_calls:
                     function_name = tool_call.function.name
                     arguments = json.loads(tool_call.function.arguments)
 
-                    print(f"\nTool: {function_name}")
-                    print(f"Arguments: {json.dumps(arguments, indent=2)}")
+                    logger.info("")
+                    logger.info("="*80)
+                    logger.info(f"🔧 TOOL CALL: {function_name}")
+                    logger.info("="*80)
+
+                    # Log tool description and time estimate
+                    description = TOOL_DESCRIPTIONS.get(function_name, "No description available")
+                    time_estimate = TOOL_TIME_ESTIMATES.get(function_name, "Unknown")
+
+                    logger.info(f"📋 Purpose: {description}")
+                    logger.info(f"⏱️  Estimated time: {time_estimate}")
+                    logger.info("")
+                    logger.info("📥 Input Parameters:")
+                    for key, value in arguments.items():
+                        if isinstance(value, str) and len(value) > 200:
+                            logger.info(f"  • {key}: {value[:200]}... (truncated)")
+                        elif isinstance(value, list) and len(value) > 5:
+                            logger.info(f"  • {key}: {value[:5]}... ({len(value)} items total)")
+                        else:
+                            logger.info(f"  • {key}: {value}")
+                    logger.info("")
+                    logger.info("▶️  Executing...")
 
                     # Execute the requested function
                     if function_name == "run_quantum_espresso":
                         experiment_name = arguments.pop("experiment_name")
                         job_id = self.submit_app_job("quantum_espresso", arguments, experiment_name)
                         result = {"job_id": job_id, "status": "QUEUED", "application": "Quantum ESPRESSO"}
-                        print(f"Result: Quantum ESPRESSO job submitted with ID: {job_id}")
+                        logger.info(f"🚀 Result: Quantum ESPRESSO job submitted with ID: {job_id}")
 
                     elif function_name == "run_cp2k":
                         experiment_name = arguments.pop("experiment_name")
                         job_id = self.submit_app_job("cp2k", arguments, experiment_name)
                         result = {"job_id": job_id, "status": "QUEUED", "application": "CP2K"}
-                        print(f"Result: CP2K job submitted with ID: {job_id}")
+                        logger.info(f"🚀 Result: CP2K job submitted with ID: {job_id}")
 
                     elif function_name == "run_gpaw":
                         experiment_name = arguments.pop("experiment_name")
                         job_id = self.submit_app_job("gpaw", arguments, experiment_name)
                         result = {"job_id": job_id, "status": "QUEUED", "application": "GPAW"}
-                        print(f"Result: GPAW job submitted with ID: {job_id}")
+                        logger.info(f"🚀 Result: GPAW job submitted with ID: {job_id}")
 
                     elif function_name == "run_lammps":
                         experiment_name = arguments.pop("experiment_name")
                         job_id = self.submit_app_job("lammps", arguments, experiment_name)
                         result = {"job_id": job_id, "status": "QUEUED", "application": "LAMMPS"}
-                        print(f"Result: LAMMPS job submitted with ID: {job_id}")
+                        logger.info(f"🚀 Result: LAMMPS job submitted with ID: {job_id}")
 
                     elif function_name == "run_gromacs":
                         experiment_name = arguments.pop("experiment_name")
                         job_id = self.submit_app_job("gromacs", arguments, experiment_name)
                         result = {"job_id": job_id, "status": "QUEUED", "application": "GROMACS"}
-                        print(f"Result: GROMACS job submitted with ID: {job_id}")
+                        logger.info(f"🚀 Result: GROMACS job submitted with ID: {job_id}")
 
                     elif function_name == "check_simulation_status":
                         result = self.check_status(arguments["job_id"])
-                        print(f"Result: Status = {result['status']}")
+                        logger.info(f"✅ Result: Status = {result['status']}")
                         if result.get('result'):
-                            print(f"Simulation Results: {json.dumps(result['result'], indent=2)}")
+                            logger.info("")
+                            logger.info("📊 Simulation Results:")
+                            logger.info(format_result_for_display(result['result'], indent=1))
 
                     elif function_name == "mace_predict_energy":
                         smiles = arguments["smiles"]
                         model_type = arguments.get("model_type", "off")
                         model_size = arguments.get("model_size", "medium")
 
-                        print(f"Calling MACE for energy prediction: {smiles} (model: {model_type}, size: {model_size})")
+                        logger.info(f"Calling MACE for energy prediction: {smiles}")
+                        logger.info(f"  Model: {model_type}, Size: {model_size}")
 
                         try:
                             xyz = smiles_to_xyz(smiles)
@@ -551,20 +797,21 @@ Guidelines for choosing applications:
                                     "model": mace_result.get("model"),
                                     "method": "MACE ML prediction"
                                 }
-                                print(f"Result: MACE predicted energy = {mace_result.get('energy')} {mace_result.get('unit', 'eV')}")
+                                logger.info(f"⚡ Result: MACE predicted energy = {mace_result.get('energy')} {mace_result.get('unit', 'eV')}")
                             else:
                                 result = {"status": "FAILED", "error": "MACE prediction failed"}
-                                print("Result: MACE prediction FAILED")
+                                logger.warning("Result: MACE prediction FAILED")
                         except Exception as e:
                             result = {"status": "FAILED", "error": str(e)}
-                            print(f"Result: Error - {e}")
+                            logger.error(f"Result: Error - {e}")
 
                     elif function_name == "mace_rapid_screening":
                         smiles_list = arguments["smiles_list"]
                         model_type = arguments.get("model_type", "off")
                         top_n = arguments.get("top_n", None)
 
-                        print(f"Calling MACE for rapid screening: {len(smiles_list)} molecules (model: {model_type})")
+                        logger.info(f"Calling MACE for rapid screening: {len(smiles_list)} molecules")
+                        logger.info(f"  Model: {model_type}, Top N: {top_n or 'all'}")
 
                         try:
                             from mace_client_simple import rapid_screening
@@ -583,14 +830,14 @@ Guidelines for choosing applications:
                                     "ranked_candidates": screening_results,
                                     "method": "MACE ML batch screening"
                                 }
-                                print(f"Result: Screened {len(smiles_list)} molecules, returning top {len(screening_results)}")
-                                print(f"Best candidate: {screening_results[0]['smiles']} ({screening_results[0]['energy']:.3f} eV)")
+                                logger.info(f"🔍 Result: Screened {len(smiles_list)} molecules, returning top {len(screening_results)}")
+                                logger.info(f"🏆 Best candidate: {screening_results[0]['smiles']} ({screening_results[0]['energy']:.3f} eV)")
                             else:
                                 result = {"status": "FAILED", "error": "MACE screening failed"}
-                                print("Result: MACE screening FAILED")
+                                logger.warning("Result: MACE screening FAILED")
                         except Exception as e:
                             result = {"status": "FAILED", "error": str(e)}
-                            print(f"Result: Error - {e}")
+                            logger.error(f"Result: Error - {e}")
 
                     elif function_name == "mace_optimize_geometry":
                         smiles = arguments["smiles"]
@@ -598,7 +845,8 @@ Guidelines for choosing applications:
                         fmax = arguments.get("fmax", 0.05)
                         steps = arguments.get("steps", 200)
 
-                        print(f"Calling MACE for geometry optimization: {smiles} (model: {model_type}, fmax: {fmax})")
+                        logger.info(f"Calling MACE for geometry optimization: {smiles}")
+                        logger.info(f"  Model: {model_type}, fmax: {fmax}, max steps: {steps}")
 
                         try:
                             xyz = smiles_to_xyz(smiles)
@@ -621,16 +869,28 @@ Guidelines for choosing applications:
                                     "optimized_structure": opt_result.get("optimized_structure"),
                                     "method": "MACE ML optimization"
                                 }
-                                print(f"Result: Optimized in {opt_result.get('steps')} steps")
-                                print(f"  Initial: {opt_result.get('initial_energy'):.3f} eV → Final: {opt_result.get('final_energy'):.3f} eV")
+                                steps = opt_result.get('steps')
+                                initial_e = opt_result.get('initial_energy')
+                                final_e = opt_result.get('final_energy')
+
+                                if steps is not None:
+                                    logger.info(f"🔄 Result: Optimized in {steps} steps")
+                                else:
+                                    logger.info("🔄 Result: Optimization completed (steps not reported)")
+
+                                if initial_e is not None and final_e is not None:
+                                    logger.info(f"  📈 Initial: {initial_e:.3f} eV → Final: {final_e:.3f} eV")
+                                elif final_e is not None:
+                                    logger.info(f"  📊 Final energy: {final_e:.3f} eV")
                             else:
                                 result = {"status": "FAILED", "error": "MACE optimization failed"}
-                                print("Result: MACE optimization FAILED")
+                                logger.warning("Result: MACE optimization FAILED")
                         except Exception as e:
                             result = {"status": "FAILED", "error": str(e)}
-                            print(f"Result: Error - {e}")
+                            logger.error(f"Result: Error - {e}")
 
                     else:
+                        logger.error(f"Unknown function: {function_name}")
                         result = {"error": f"Unknown function: {function_name}"}
 
                     # Add function result to messages
@@ -643,19 +903,22 @@ Guidelines for choosing applications:
 
             else:
                 # Agent provided a final response
-                print(f"\n{'='*80}")
-                print(f"AGENT RESPONSE:")
-                print(f"{'='*80}")
-                print(message.content)
-                print(f"{'='*80}\n")
+                log_section(logger, "AGENT FINAL RESPONSE")
+                for line in message.content.split('\n'):
+                    logger.info(f"  {line}")
+                logger.info("="*80)
 
                 # If we have a job_id and agent is done, return the final result
                 if job_id:
+                    logger.info("Retrieving final job status...")
                     final_status = self.check_status(job_id)
+                    logger.info(f"Final status: {final_status.get('status')}")
                     return final_status
 
+                logger.info("Workflow complete!")
                 return {"message": message.content}
 
+        logger.error("Agent exceeded maximum iterations without completing task!")
         raise Exception("Agent exceeded maximum iterations without completing task")
 
 
